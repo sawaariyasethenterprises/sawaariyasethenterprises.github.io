@@ -140,7 +140,7 @@ Object.values(RULES).forEach(rule => {
   });
 });
 
-const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE'; /* ← paste key from web3forms.com */
+const WEB3FORMS_KEY = 'fb3113a7-498d-41f2-bbbf-8931633a3d2f';
 const WA_NUMBER     = '917055598280';
 
 form && form.addEventListener('submit', async e => {
