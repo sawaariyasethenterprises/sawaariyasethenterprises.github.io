@@ -909,14 +909,13 @@ img { max-width: 100%; display: block; }
 /* ── PRINT TOGGLE ── */
 .print-toggle {
   display: flex; border: 1.5px solid var(--border); border-radius: 8px;
-  overflow: hidden; background: var(--off-white); height: 100%;
-  min-height: 40px;
+  overflow: hidden; background: var(--off-white);
 }
 .pt-btn {
   flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px;
-  padding: 10px 8px; font-size: 0.76rem; font-weight: 600;
+  padding: 10px 8px; font-size: 0.875rem; font-weight: 600;
   color: var(--text-muted); background: transparent;
-  border: none; cursor: pointer; transition: all 0.22s;
+  border: none; cursor: pointer; transition: all 0.22s; line-height: 1.4;
 }
 .pt-btn:first-child { border-right: 1.5px solid var(--border); }
 .pt-btn.active.pt-yes { background: #edf7ee; color: #1e8e3e; }
