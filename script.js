@@ -169,22 +169,119 @@ form && form.addEventListener('submit', async e => {
 
   /* ── 1. Email via Web3Forms ── */
   try {
-    const payload = new FormData();
-    payload.append('access_key',  WEB3FORMS_KEY);
-    payload.append('subject',     `New Bag Enquiry from ${name} — Sawaariya Seth Enterprises`);
-    payload.append('from_name',   'SSE Website Enquiry');
-    payload.append('replyto',     email || 'sawaariyasethenterprises@gmail.com');
-    payload.append('Name',        name);
-    payload.append('Mobile',      phone);
-    payload.append('Email',       email    || 'Not provided');
-    payload.append('City & State',city);
-    payload.append('Bag Type',    bagType);
-    payload.append('Quantity',    qty      || 'Not specified');
-    payload.append('Printing',    printLabel);
-    payload.append('Specifications', specs || 'None');
+    const now       = new Date();
+    const timestamp = now.toLocaleString('en-IN', { dateStyle: 'full', timeStyle: 'short', timeZone: 'Asia/Kolkata' });
 
-    await fetch('https://api.web3forms.com/submit', { method: 'POST', body: payload });
-  } catch (_) { /* silent — WhatsApp still goes through */ }
+    const row = (label, value) => `
+      <tr>
+        <td style="padding:10px 16px;width:38%;background:#f8f5f1;border-bottom:1px solid #ede8e0;font-size:13px;font-weight:600;color:#5a4a3a;white-space:nowrap;">${label}</td>
+        <td style="padding:10px 16px;border-bottom:1px solid #ede8e0;font-size:13px;color:#1a1a2e;">${value}</td>
+      </tr>`;
+
+    const html = `
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"/></head>
+<body style="margin:0;padding:0;background:#f0ece6;font-family:Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f0ece6;padding:32px 0;">
+  <tr><td align="center">
+    <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
+
+      <!-- HEADER -->
+      <tr>
+        <td style="background:linear-gradient(135deg,#0D1730,#1A2E52);padding:32px 36px;text-align:center;">
+          <div style="font-size:22px;font-weight:800;color:#FF6B00;letter-spacing:3px;text-transform:uppercase;">SAWAARIYA SETH</div>
+          <div style="font-size:11px;font-weight:600;color:#E8B84B;letter-spacing:6px;text-transform:uppercase;margin-top:4px;">ENTERPRISES</div>
+          <div style="margin-top:14px;display:inline-block;background:#FF6B00;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;padding:5px 18px;border-radius:50px;text-transform:uppercase;">New Enquiry Received</div>
+        </td>
+      </tr>
+
+      <!-- SECTION: CUSTOMER DETAILS -->
+      <tr>
+        <td style="background:#fff;padding:28px 36px 0;">
+          <div style="font-size:11px;font-weight:700;color:#FF6B00;letter-spacing:2.5px;text-transform:uppercase;border-bottom:2px solid #FF6B00;padding-bottom:8px;margin-bottom:0;">Customer Details</div>
+        </td>
+      </tr>
+      <tr>
+        <td style="background:#fff;padding:0 36px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #ede8e0;border-radius:8px;overflow:hidden;margin-top:14px;">
+            ${row('Full Name', name)}
+            ${row('Mobile Number', phone)}
+            ${row('Email Address', email || '<span style="color:#aaa;font-style:italic;">Not provided</span>')}
+            ${row('City &amp; State', city)}
+          </table>
+        </td>
+      </tr>
+
+      <!-- SECTION: ORDER REQUIREMENTS -->
+      <tr>
+        <td style="background:#fff;padding:24px 36px 0;">
+          <div style="font-size:11px;font-weight:700;color:#FF6B00;letter-spacing:2.5px;text-transform:uppercase;border-bottom:2px solid #FF6B00;padding-bottom:8px;margin-bottom:0;">Order Requirements</div>
+        </td>
+      </tr>
+      <tr>
+        <td style="background:#fff;padding:0 36px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #ede8e0;border-radius:8px;overflow:hidden;margin-top:14px;">
+            ${row('Bag Type', `<strong>${bagType}</strong>`)}
+            ${row('Approx. Quantity', qty || '<span style="color:#aaa;font-style:italic;">Not specified</span>')}
+            ${row('Custom Printing', printLabel)}
+          </table>
+        </td>
+      </tr>
+
+      <!-- SECTION: SPECIFICATIONS -->
+      <tr>
+        <td style="background:#fff;padding:24px 36px 0;">
+          <div style="font-size:11px;font-weight:700;color:#FF6B00;letter-spacing:2.5px;text-transform:uppercase;border-bottom:2px solid #FF6B00;padding-bottom:8px;">Additional Specifications</div>
+          <div style="background:#f8f5f1;border:1px solid #ede8e0;border-radius:8px;padding:14px 16px;margin-top:14px;font-size:13px;color:#3a3a3a;line-height:1.65;min-height:44px;">
+            ${specs || '<span style="color:#aaa;font-style:italic;">None provided</span>'}
+          </div>
+        </td>
+      </tr>
+
+      <!-- ACTION PROMPT -->
+      <tr>
+        <td style="background:#fff;padding:28px 36px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(135deg,#fff8f2,#fff3e8);border:1px solid #ffd9b8;border-radius:8px;">
+            <tr>
+              <td style="padding:16px 20px;">
+                <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:6px;">Suggested Next Step</div>
+                <div style="font-size:12px;color:#555;line-height:1.6;">Reply directly to this email or call the customer at <strong>${phone}</strong> within 24 hours to confirm requirements and provide a quotation.</div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- FOOTER -->
+      <tr>
+        <td style="background:#0D1730;padding:20px 36px;text-align:center;">
+          <div style="font-size:11px;color:rgba(255,255,255,0.45);line-height:1.8;">
+            Received: ${timestamp} IST<br/>
+            Source: sawaariyasethenterprises.github.io<br/>
+            <span style="color:rgba(255,255,255,0.25);">This is an automated notification. Reply to respond to the customer.</span>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>`;
+
+    await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject:    `New Enquiry: ${bagType} — ${name} (${city})`,
+        from_name:  'Sawaariya Seth Enterprises Website',
+        replyto:    email || 'sawaariyasethenterprises@gmail.com',
+        html,
+      }),
+    });
+  } catch (_) { /* silent */ }
 
   /* ── 2. Reset UI ── */
   btnText.textContent = 'Submit Enquiry';
