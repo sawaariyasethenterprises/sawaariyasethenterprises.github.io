@@ -930,19 +930,34 @@
             </div>
 
             <div class="fld" id="fld-bagtype">
-              <label for="inp-bagtype">Bag Type Required *</label>
-              <div class="select-wrap">
-                <select id="inp-bagtype" name="bagType" required>
-                  <option value="">— Select Product —</option>
-                  <option value="W-Cut Bags">W-Cut Bags</option>
-                  <option value="U-Cut Bags">U-Cut Bags</option>
-                  <option value="D-Cut Bags">D-Cut Bags</option>
-                  <option value="Box Bags (Structured)">Box Bags (Structured)</option>
-                  <option value="Loop Handle Bags">Loop Handle Bags</option>
-                  <option value="BOPP Laminated Bags">BOPP Laminated Bags</option>
-                  <option value="Multiple Product Types">Multiple Product Types</option>
-                </select>
+              <label>Bag Type Required * <span class="fld-hint">Select one or more</span></label>
+              <div class="bag-chips" id="bag-chips">
+                <button type="button" class="bag-chip" data-value="W-Cut Bags">
+                  <span class="chip-dot" style="background:#FF6B00"></span>W-Cut Bags
+                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="bag-chip" data-value="U-Cut Bags">
+                  <span class="chip-dot" style="background:#2196F3"></span>U-Cut Bags
+                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="bag-chip" data-value="D-Cut Bags">
+                  <span class="chip-dot" style="background:#1DB954"></span>D-Cut Bags
+                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="bag-chip" data-value="Box Bags">
+                  <span class="chip-dot" style="background:#E8B84B"></span>Box Bags
+                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="bag-chip" data-value="Loop Handle Bags">
+                  <span class="chip-dot" style="background:#8B6914"></span>Loop Handle
+                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="bag-chip" data-value="BOPP Laminated Bags">
+                  <span class="chip-dot" style="background:#00BFA5"></span>BOPP Bags
+                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
               </div>
+              <input type="hidden" id="inp-bagtype" name="bagType" />
               <span class="fld-error" id="err-bagtype"></span>
             </div>
 
@@ -952,13 +967,18 @@
                 <input type="text" id="inp-qty" name="quantity" placeholder="e.g. 5,000 pcs" inputmode="numeric" />
               </div>
               <div class="fld">
-                <label for="inp-print">Custom Printing?</label>
-                <div class="select-wrap">
-                  <select id="inp-print" name="printing">
-                    <option value="yes">Yes — With Logo Printing</option>
-                    <option value="no">No — Plain Bags Required</option>
-                  </select>
+                <label>Custom Printing?</label>
+                <div class="print-toggle" id="print-toggle">
+                  <button type="button" class="pt-btn pt-yes active" data-value="yes">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Yes — With Logo
+                  </button>
+                  <button type="button" class="pt-btn pt-no" data-value="no">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    No — Plain Bags
+                  </button>
                 </div>
+                <input type="hidden" id="inp-print" name="printing" value="yes" />
               </div>
             </div>
 

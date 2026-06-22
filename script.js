@@ -121,7 +121,7 @@ const RULES = {
   city:    { id: 'inp-city',    fld: 'fld-city',
              msg: v => v.trim().length < 2 ? 'Please enter your city and state' : '' },
   bagType: { id: 'inp-bagtype', fld: 'fld-bagtype',
-             msg: v => v === '' ? 'Please select a bag type to continue' : '' },
+             msg: () => selectedBags.length === 0 ? 'Please select at least one bag type' : '' },
 };
 
 function showError(rule, message) {
@@ -153,6 +153,29 @@ Object.values(RULES).forEach(rule => {
   input.addEventListener('input', () => {
     const fldEl = document.getElementById(rule.fld);
     if (fldEl && fldEl.classList.contains('fld--error')) validateField(rule);
+  });
+});
+
+/* ── BAG CHIP MULTI-SELECT ── */
+const selectedBags = [];
+document.querySelectorAll('.bag-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const val = chip.dataset.value;
+    const idx = selectedBags.indexOf(val);
+    if (idx === -1) { selectedBags.push(val); chip.classList.add('selected'); }
+    else            { selectedBags.splice(idx, 1); chip.classList.remove('selected'); }
+    document.getElementById('inp-bagtype').value = selectedBags.join(', ');
+    const fldEl = document.getElementById('fld-bagtype');
+    if (fldEl && fldEl.classList.contains('fld--error')) validateField(RULES.bagType);
+  });
+});
+
+/* ── PRINT TOGGLE ── */
+document.querySelectorAll('.pt-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pt-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('inp-print').value = btn.dataset.value;
   });
 });
 
@@ -196,14 +219,14 @@ form && form.addEventListener('submit', async e => {
   btn.disabled = true;
 
   /* ── Collect values ── */
-  const name     = document.getElementById('inp-name').value.trim();
-  const phone    = document.getElementById('inp-phone').value.trim();
-  const email    = document.getElementById('inp-email').value.trim();
-  const city     = document.getElementById('inp-city').value.trim();
-  const bagType  = document.getElementById('inp-bagtype').value;
-  const qty      = document.getElementById('inp-qty').value.trim();
-  const printing = document.getElementById('inp-print').value;
-  const specs    = document.getElementById('inp-specs').value.trim();
+  const name       = document.getElementById('inp-name').value.trim();
+  const phone      = document.getElementById('inp-phone').value.trim();
+  const email      = document.getElementById('inp-email').value.trim();
+  const city       = document.getElementById('inp-city').value.trim();
+  const bagType    = selectedBags.join(', ');
+  const qty        = document.getElementById('inp-qty').value.trim();
+  const printing   = document.getElementById('inp-print').value;
+  const specs      = document.getElementById('inp-specs').value.trim();
   const printLabel = printing === 'yes' ? 'Yes — With Logo Printing' : 'No — Plain Bags Required';
 
   /* ── 1. Email via Web3Forms ── */
@@ -237,6 +260,15 @@ form && form.addEventListener('submit', async e => {
   btnText.textContent = 'Submit Enquiry';
   btn.disabled = false;
   form.reset();
+  /* Clear chip selections */
+  selectedBags.length = 0;
+  document.querySelectorAll('.bag-chip').forEach(c => c.classList.remove('selected'));
+  document.getElementById('inp-bagtype').value = '';
+  /* Reset print toggle to default */
+  document.querySelectorAll('.pt-btn').forEach(b => b.classList.remove('active'));
+  const defaultPrint = document.querySelector('.pt-btn.pt-yes');
+  if (defaultPrint) { defaultPrint.classList.add('active'); document.getElementById('inp-print').value = 'yes'; }
+  /* Clear validation states */
   Object.values(RULES).forEach(rule => {
     const fldEl = document.getElementById(rule.fld);
     if (fldEl) fldEl.classList.remove('fld--error', 'fld--valid');

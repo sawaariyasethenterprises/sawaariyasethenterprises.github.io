@@ -870,6 +870,52 @@ img { max-width: 100%; display: block; }
 }
 .fld.fld--valid .select-wrap::after { border-top-color: #1e8e3e; }
 
+/* ── BAG CHIP MULTI-SELECT ── */
+.fld-hint { font-size: 0.72rem; font-weight: 400; color: var(--text-muted); margin-left: 6px; }
+.bag-chips {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 2px;
+}
+.bag-chip {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 12px; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border); background: var(--off-white);
+  font-size: 0.82rem; font-weight: 600; color: var(--text);
+  cursor: pointer; transition: all 0.2s; text-align: left;
+  position: relative;
+}
+.bag-chip:hover { border-color: var(--saffron); background: #fff8f3; color: var(--saffron); }
+.bag-chip.selected {
+  background: var(--saffron); border-color: var(--saffron);
+  color: #fff; box-shadow: 0 4px 12px rgba(255,107,0,0.3);
+}
+.chip-dot {
+  width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+.bag-chip.selected .chip-dot { opacity: 0; width: 0; margin: 0; }
+.chip-check {
+  width: 14px; height: 14px; margin-left: auto; flex-shrink: 0;
+  opacity: 0; transform: scale(0.5); transition: all 0.2s;
+}
+.bag-chip.selected .chip-check { opacity: 1; transform: scale(1); }
+@media (max-width: 540px) { .bag-chips { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── PRINT TOGGLE ── */
+.print-toggle {
+  display: flex; border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+  overflow: hidden; background: var(--off-white);
+}
+.pt-btn {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 12px 10px; font-size: 0.8rem; font-weight: 600;
+  color: var(--text-muted); background: transparent;
+  border: none; cursor: pointer; transition: all 0.22s;
+}
+.pt-btn:first-child { border-right: 1.5px solid var(--border); }
+.pt-btn.active.pt-yes { background: #e8f5e9; color: #1e8e3e; }
+.pt-btn.active.pt-no  { background: #fce8e6; color: #d93025; }
+.pt-btn:hover:not(.active) { background: #f5f0ea; color: var(--text); }
+
 .form-submit { width: 100%; justify-content: center; font-size: 1rem; padding: 17px; }
 .form-submit:disabled { opacity: 0.65; cursor: not-allowed; }
 .form-note { text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 14px; }
