@@ -503,7 +503,9 @@ img { max-width: 100%; display: block; }
 .glossy-badge { background: linear-gradient(135deg, #00c6fb, #005bea); }
 
 /* Bag Visuals */
-.prod-visual { position: relative; display: flex; align-items: center; justify-content: center; width: 90px; }
+.prod-visual { position: relative; display: flex; align-items: center; justify-content: center; width: 150px; }
+.bag-svg { width: 120px; height: 150px; transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+.prod-card:hover .bag-svg { transform: translateY(-10px) scale(1.06); }
 .pv-bag-body {
   width: 70px; height: 88px; border-radius: 6px 6px 4px 4px;
   background: rgba(255,255,255,0.75);
