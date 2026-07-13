@@ -49,33 +49,27 @@
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-logo" aria-label="Alorex Packaging LLP — Home">
-        <!-- ── INLINE LOGO SVG (Navbar / Dark Background) ── -->
-        <svg class="logo-svg" viewBox="0 0 274 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- ── INLINE LOGO SVG (Navbar) ── -->
+        <svg class="logo-svg" viewBox="0 0 262 56" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="nlg" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FF6B00"/><stop offset="1" stop-color="#E8B84B"/>
+              <stop stop-color="#C8673A"/><stop offset="1" stop-color="#C89B2E"/>
             </linearGradient>
+            <clipPath id="nclip"><circle cx="28" cy="28" r="27"/></clipPath>
           </defs>
-          <!-- Emblem -->
-          <rect width="56" height="56" rx="14" fill="url(#nlg)"/>
-          <rect x="3.5" y="3.5" width="49" height="49" rx="10.5" stroke="rgba(255,255,255,0.22)" stroke-width="1" fill="none"/>
-          <!-- Bag handle (single elegant arch) -->
-          <path d="M14 29 Q14 8 28 8 Q42 8 42 29" stroke="white" stroke-width="2.6" stroke-linecap="round" fill="none"/>
-          <!-- Bag body -->
-          <rect x="10" y="29" width="36" height="21" rx="4.5" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2.2"/>
-          <!-- Fold-crease detail -->
-          <line x1="17" y1="40" x2="39" y2="40" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-dasharray="3 2.5"/>
-          <!-- Eco mark (top-right) -->
-          <circle cx="46" cy="10" r="4.2" fill="rgba(255,255,255,0.14)" stroke="white" stroke-width="1.1"/>
-          <path d="M43.8 10.5 Q46 7.2 48.2 10.5" stroke="white" stroke-width="1.1" stroke-linecap="round" fill="none"/>
-          <!-- Wordmark: ALOREX -->
-          <text x="70" y="23" font-family="Cinzel,Georgia,serif" font-size="21" font-weight="700" fill="white" letter-spacing="9">ALOREX</text>
-          <!-- Separator rule -->
-          <rect x="70" y="29.5" width="170" height="0.9" rx="0.45" fill="#FF8C35" opacity="0.55"/>
-          <!-- PACKAGING LLP -->
-          <text x="70" y="41.5" font-family="Cinzel,Georgia,serif" font-size="8.5" font-weight="400" fill="#FF8C35" letter-spacing="3.8">PACKAGING LLP</text>
-          <!-- Tagline -->
-          <text x="70" y="53" font-family="Georgia,'Times New Roman',serif" font-size="7.5" fill="rgba(255,255,255,0.27)" letter-spacing="1.5" font-style="italic">Premium Non Woven Bags · India</text>
+          <!-- Circle emblem -->
+          <circle cx="28" cy="28" r="27" fill="url(#nlg)"/>
+          <circle cx="28" cy="28" r="23.5" stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none"/>
+          <!-- Bag icon -->
+          <g clip-path="url(#nclip)">
+            <path d="M16 30 Q16 11 28 11 Q40 11 40 30" stroke="rgba(255,255,255,0.95)" stroke-width="2.3" stroke-linecap="round" fill="none"/>
+            <rect x="12" y="30" width="32" height="19" rx="4" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.95)" stroke-width="2.1"/>
+          </g>
+          <!-- Wordmark -->
+          <text x="66" y="22" font-family="Cinzel,Georgia,serif" font-size="20" font-weight="700" fill="#1C2840" letter-spacing="8">ALOREX</text>
+          <rect x="66" y="29" width="164" height="0.8" rx="0.4" fill="#C8673A" opacity="0.5"/>
+          <text x="66" y="41" font-family="Cinzel,Georgia,serif" font-size="8.5" font-weight="400" fill="#C8673A" letter-spacing="3.5">PACKAGING LLP</text>
+          <text x="66" y="52" font-family="Georgia,serif" font-size="7" fill="rgba(30,26,20,0.28)" letter-spacing="1.2" font-style="italic">Premium Non Woven Bags · India</text>
         </svg>
       </a>
 
@@ -983,17 +977,46 @@
        CONTACT / CTA
   ════════════════════════════════ -->
   <section class="contact" id="contact">
+    <div class="contact-glow contact-glow--1"></div>
+    <div class="contact-glow contact-glow--2"></div>
     <div class="container">
       <div class="contact-layout">
+
         <div class="contact-left" data-animate="fade-right">
-          <div class="section-eyebrow">Get In Touch</div>
-          <h2 class="section-heading">
-            Request Your<br/>
-            <em>Free Quote Today</em>
+          <div class="section-eyebrow light-eyebrow">Free Quote</div>
+          <h2 class="section-heading white-heading">
+            Your Custom Bags,<br/>
+            <em>Delivered Across India</em>
           </h2>
           <p class="contact-intro">
-            Tell us about your requirement and receive a detailed quotation within 24 hours — with no obligations and no hidden charges.
+            Share your requirement and get a detailed, no-obligation quote within 24 hours — crafted specifically for your brand.
           </p>
+
+          <div class="quote-steps">
+            <div class="qs-step">
+              <div class="qs-num">01</div>
+              <div class="qs-body">
+                <strong>Fill the Form</strong>
+                <span>Bag type, qty &amp; specs</span>
+              </div>
+            </div>
+            <div class="qs-line"></div>
+            <div class="qs-step">
+              <div class="qs-num">02</div>
+              <div class="qs-body">
+                <strong>Receive Quote</strong>
+                <span>Detailed pricing in 24h</span>
+              </div>
+            </div>
+            <div class="qs-line"></div>
+            <div class="qs-step">
+              <div class="qs-num">03</div>
+              <div class="qs-body">
+                <strong>Place Order</strong>
+                <span>We deliver pan-India</span>
+              </div>
+            </div>
+          </div>
 
           <div class="contact-channels">
             <a href="tel:+917055598280" class="cc-item">
@@ -1010,11 +1033,11 @@
                 <span>Chat instantly for faster response</span>
               </div>
             </a>
-            <a href="mailto:sawaariyasethenterprises@gmail.com" class="cc-item">
+            <a href="mailto:alorexpackaging@gmail.com" class="cc-item">
               <div class="cc-icon">📧</div>
               <div class="cc-text">
                 <strong>Email Us</strong>
-                <span>sawaariyasethenterprises@gmail.com</span>
+                <span>alorexpackaging@gmail.com</span>
               </div>
             </a>
             <div class="cc-item">
@@ -1030,105 +1053,132 @@
             <span class="ch-dot active"></span>
             <span>Available Mon–Sat, 9:00 AM – 7:00 PM · Sun 10:00 AM – 4:00 PM</span>
           </div>
+
+          <div class="contact-stats">
+            <div class="cs-item">
+              <strong>500+</strong>
+              <span>Brands Served</span>
+            </div>
+            <div class="cs-div"></div>
+            <div class="cs-item">
+              <strong>10M+</strong>
+              <span>Bags Delivered</span>
+            </div>
+            <div class="cs-div"></div>
+            <div class="cs-item">
+              <strong>24h</strong>
+              <span>Quote Guarantee</span>
+            </div>
+          </div>
         </div>
 
         <div class="contact-right" data-animate="fade-left">
-          <form class="enquiry-form" id="enquiryForm" novalidate>
-            <h3 class="form-title">Send an Enquiry</h3>
-
-            <div class="form-row-2">
-              <div class="fld" id="fld-name">
-                <label for="inp-name">Full Name *</label>
-                <input type="text" id="inp-name" name="name" placeholder="e.g. Rajesh Kumar" required autocomplete="name" />
-                <span class="fld-error" id="err-name"></span>
-              </div>
-              <div class="fld" id="fld-phone">
-                <label for="inp-phone">Mobile Number *</label>
-                <input type="tel" id="inp-phone" name="phone" placeholder="+91 XXXXX XXXXX" required autocomplete="tel" inputmode="numeric" />
-                <span class="fld-error" id="err-phone"></span>
-              </div>
+          <div class="enquiry-form-wrap">
+            <div class="form-card-header">
+              <h3 class="form-title">Send an Enquiry</h3>
+              <p class="form-subtitle">No spam &nbsp;·&nbsp; Response within 24 hours &nbsp;·&nbsp; No obligation</p>
             </div>
+            <form class="enquiry-form" id="enquiryForm" novalidate>
 
-            <div class="form-row-2">
-              <div class="fld" id="fld-email">
-                <label for="inp-email">Email Address</label>
-                <input type="email" id="inp-email" name="email" placeholder="name@company.com" autocomplete="email" />
-                <span class="fld-error" id="err-email"></span>
+              <div class="form-row-2">
+                <div class="fld" id="fld-name">
+                  <label for="inp-name">Full Name *</label>
+                  <input type="text" id="inp-name" name="name" placeholder="e.g. Rajesh Kumar" required autocomplete="name" />
+                  <span class="fld-error" id="err-name"></span>
+                </div>
+                <div class="fld" id="fld-phone">
+                  <label for="inp-phone">Mobile Number *</label>
+                  <input type="tel" id="inp-phone" name="phone" placeholder="+91 XXXXX XXXXX" required autocomplete="tel" inputmode="numeric" />
+                  <span class="fld-error" id="err-phone"></span>
+                </div>
               </div>
-              <div class="fld" id="fld-city">
-                <label for="inp-city">City &amp; State *</label>
-                <input type="text" id="inp-city" name="city" placeholder="e.g. Mumbai, Maharashtra" required autocomplete="address-level2" />
-                <span class="fld-error" id="err-city"></span>
-              </div>
-            </div>
 
-            <div class="fld" id="fld-bagtype">
-              <label>Bag Type Required * <span class="fld-hint">Select one or more</span></label>
-              <div class="bag-chips" id="bag-chips">
-                <button type="button" class="bag-chip" data-value="W-Cut Bags">
-                  <span class="chip-dot" style="background:#FF6B00"></span>W-Cut Bags
-                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <button type="button" class="bag-chip" data-value="U-Cut Bags">
-                  <span class="chip-dot" style="background:#2196F3"></span>U-Cut Bags
-                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <button type="button" class="bag-chip" data-value="D-Cut Bags">
-                  <span class="chip-dot" style="background:#1DB954"></span>D-Cut Bags
-                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <button type="button" class="bag-chip" data-value="Box Bags">
-                  <span class="chip-dot" style="background:#E8B84B"></span>Box Bags
-                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <button type="button" class="bag-chip" data-value="Loop Handle Bags">
-                  <span class="chip-dot" style="background:#8B6914"></span>Loop Handle
-                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <button type="button" class="bag-chip" data-value="BOPP Laminated Bags">
-                  <span class="chip-dot" style="background:#00BFA5"></span>BOPP Bags
-                  <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
+              <div class="form-row-2">
+                <div class="fld" id="fld-email">
+                  <label for="inp-email">Email Address</label>
+                  <input type="email" id="inp-email" name="email" placeholder="name@company.com" autocomplete="email" />
+                  <span class="fld-error" id="err-email"></span>
+                </div>
+                <div class="fld" id="fld-city">
+                  <label for="inp-city">City &amp; State *</label>
+                  <input type="text" id="inp-city" name="city" placeholder="e.g. Mumbai, Maharashtra" required autocomplete="address-level2" />
+                  <span class="fld-error" id="err-city"></span>
+                </div>
               </div>
-              <input type="hidden" id="inp-bagtype" name="bagType" />
-              <span class="fld-error" id="err-bagtype"></span>
-            </div>
 
-            <div class="form-row-2">
-              <div class="fld">
-                <label for="inp-qty">Approx. Quantity</label>
-                <input type="text" id="inp-qty" name="quantity" placeholder="e.g. 5,000 pcs" inputmode="numeric" />
-              </div>
-              <div class="fld">
-                <label>Custom Printing?</label>
-                <div class="print-toggle" id="print-toggle">
-                  <button type="button" class="pt-btn pt-yes active" data-value="yes">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    Yes — With Logo
+              <div class="fld" id="fld-bagtype">
+                <label>Bag Type Required * <span class="fld-hint">Select one or more</span></label>
+                <div class="bag-chips" id="bag-chips">
+                  <button type="button" class="bag-chip" data-value="W-Cut Bags">
+                    <span class="chip-dot" style="background:#FF6B00"></span>W-Cut Bags
+                    <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </button>
-                  <button type="button" class="pt-btn pt-no" data-value="no">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                    No — Plain Bags
+                  <button type="button" class="bag-chip" data-value="U-Cut Bags">
+                    <span class="chip-dot" style="background:#2196F3"></span>U-Cut Bags
+                    <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <button type="button" class="bag-chip" data-value="D-Cut Bags">
+                    <span class="chip-dot" style="background:#1DB954"></span>D-Cut Bags
+                    <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <button type="button" class="bag-chip" data-value="Box Bags">
+                    <span class="chip-dot" style="background:#E8B84B"></span>Box Bags
+                    <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <button type="button" class="bag-chip" data-value="Loop Handle Bags">
+                    <span class="chip-dot" style="background:#8B6914"></span>Loop Handle
+                    <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <button type="button" class="bag-chip" data-value="BOPP Laminated Bags">
+                    <span class="chip-dot" style="background:#00BFA5"></span>BOPP Bags
+                    <svg class="chip-check" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </button>
                 </div>
-                <input type="hidden" id="inp-print" name="printing" value="yes" />
+                <input type="hidden" id="inp-bagtype" name="bagType" />
+                <span class="fld-error" id="err-bagtype"></span>
               </div>
-            </div>
 
-            <div class="fld">
-              <label for="inp-specs">Additional Specifications</label>
-              <textarea id="inp-specs" name="specs" rows="3" placeholder="Describe size, GSM, colour, special design needs, or any other specific requirements..."></textarea>
-            </div>
+              <div class="form-row-2">
+                <div class="fld">
+                  <label for="inp-qty">Approx. Quantity</label>
+                  <input type="text" id="inp-qty" name="quantity" placeholder="e.g. 5,000 pcs" inputmode="numeric" />
+                </div>
+                <div class="fld">
+                  <label>Custom Printing?</label>
+                  <div class="print-toggle" id="print-toggle">
+                    <button type="button" class="pt-btn pt-yes active" data-value="yes">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      Yes — With Logo
+                    </button>
+                    <button type="button" class="pt-btn pt-no" data-value="no">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                      No — Plain Bags
+                    </button>
+                  </div>
+                  <input type="hidden" id="inp-print" name="printing" value="yes" />
+                </div>
+              </div>
 
-            <div class="form-actions">
-              <button type="submit" class="cta-primary form-submit">
-                <span class="btn-text">Submit Enquiry</span>
-                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <p class="form-note">✓ No spam &nbsp;·&nbsp; ✓ Response within 24 hours &nbsp;·&nbsp; ✓ No obligation</p>
-            </div>
-          </form>
+              <div class="fld">
+                <label for="inp-specs">Additional Specifications</label>
+                <textarea id="inp-specs" name="specs" rows="3" placeholder="Describe size, GSM, colour, special design needs, or any other specific requirements..."></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="cta-primary form-submit">
+                  <span class="btn-text">Submit Enquiry</span>
+                  <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="https://wa.me/917055598280?text=Hi%2C%20I%20need%20a%20quote%20for%20non%20woven%20bags" target="_blank" rel="noopener noreferrer" class="form-wa-alt">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Quick WhatsApp Quote
+                </a>
+              </div>
+
+            </form>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1142,33 +1192,27 @@
         <div class="footer-grid">
           <div class="footer-brand-col">
             <div class="footer-logo">
-              <!-- ── INLINE LOGO SVG (Footer / Dark Background) ── -->
-              <svg class="logo-svg logo-svg--footer" viewBox="0 0 274 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- ── INLINE LOGO SVG (Footer) ── -->
+              <svg class="logo-svg logo-svg--footer" viewBox="0 0 262 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="flg" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#FF6B00"/><stop offset="1" stop-color="#E8B84B"/>
+                    <stop stop-color="#C8673A"/><stop offset="1" stop-color="#C89B2E"/>
                   </linearGradient>
+                  <clipPath id="fclip"><circle cx="28" cy="28" r="27"/></clipPath>
                 </defs>
-                <!-- Emblem -->
-                <rect width="56" height="56" rx="14" fill="url(#flg)"/>
-                <rect x="3.5" y="3.5" width="49" height="49" rx="10.5" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
-                <!-- Bag handle -->
-                <path d="M14 29 Q14 8 28 8 Q42 8 42 29" stroke="white" stroke-width="2.6" stroke-linecap="round" fill="none"/>
-                <!-- Bag body -->
-                <rect x="10" y="29" width="36" height="21" rx="4.5" fill="rgba(255,255,255,0.14)" stroke="white" stroke-width="2.2"/>
-                <!-- Fold-crease detail -->
-                <line x1="17" y1="40" x2="39" y2="40" stroke="rgba(255,255,255,0.32)" stroke-width="1" stroke-dasharray="3 2.5"/>
-                <!-- Eco mark -->
-                <circle cx="46" cy="10" r="4.2" fill="rgba(255,255,255,0.13)" stroke="white" stroke-width="1.1"/>
-                <path d="M43.8 10.5 Q46 7.2 48.2 10.5" stroke="white" stroke-width="1.1" stroke-linecap="round" fill="none"/>
-                <!-- Wordmark: ALOREX -->
-                <text x="70" y="23" font-family="Cinzel,Georgia,serif" font-size="21" font-weight="700" fill="white" letter-spacing="9" opacity="0.9">ALOREX</text>
-                <!-- Separator -->
-                <rect x="70" y="29.5" width="170" height="0.9" rx="0.45" fill="#FF8C35" opacity="0.45"/>
-                <!-- PACKAGING LLP -->
-                <text x="70" y="41.5" font-family="Cinzel,Georgia,serif" font-size="8.5" font-weight="400" fill="#FF8C35" letter-spacing="3.8">PACKAGING LLP</text>
-                <!-- Tagline -->
-                <text x="70" y="53" font-family="Georgia,'Times New Roman',serif" font-size="7.5" fill="rgba(255,255,255,0.22)" letter-spacing="1.5" font-style="italic">Premium Non Woven Bags · India</text>
+                <!-- Circle emblem -->
+                <circle cx="28" cy="28" r="27" fill="url(#flg)"/>
+                <circle cx="28" cy="28" r="23.5" stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none"/>
+                <!-- Bag icon -->
+                <g clip-path="url(#fclip)">
+                  <path d="M16 30 Q16 11 28 11 Q40 11 40 30" stroke="rgba(255,255,255,0.95)" stroke-width="2.3" stroke-linecap="round" fill="none"/>
+                  <rect x="12" y="30" width="32" height="19" rx="4" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.95)" stroke-width="2.1"/>
+                </g>
+                <!-- Wordmark -->
+                <text x="66" y="22" font-family="Cinzel,Georgia,serif" font-size="20" font-weight="700" fill="white" letter-spacing="8" opacity="0.92">ALOREX</text>
+                <rect x="66" y="29" width="164" height="0.8" rx="0.4" fill="#C8673A" opacity="0.6"/>
+                <text x="66" y="41" font-family="Cinzel,Georgia,serif" font-size="8.5" font-weight="400" fill="#C8673A" letter-spacing="3.5">PACKAGING LLP</text>
+                <text x="66" y="52" font-family="Georgia,serif" font-size="7" fill="rgba(255,255,255,0.28)" letter-spacing="1.2" font-style="italic">Premium Non Woven Bags · India</text>
               </svg>
             </div>
             <p class="footer-brand-desc">India's trusted LLP manufacturer of premium non woven bags with custom printing — crafting packaging that carries your brand's legacy.</p>
@@ -1203,7 +1247,7 @@
             <h4>Contact</h4>
             <div class="footer-contact-list">
               <p>📞 <a href="tel:+917055598280">+91 70555 98280</a></p>
-              <p>📧 <a href="mailto:sawaariyasethenterprises@gmail.com">sawaariyasethenterprises@gmail.com</a></p>
+              <p>📧 <a href="mailto:alorexpackaging@gmail.com">alorexpackaging@gmail.com</a></p>
               <p>💬 <a href="https://wa.me/917055598280" target="_blank">WhatsApp Us</a></p>
               <p>📍 India · Pan India Delivery</p>
               <p>🕐 Mon–Sat: 9 AM – 7 PM</p>
