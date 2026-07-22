@@ -1,16 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="130" y2="130" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FF6B00"/>
-      <stop offset="100%" stop-color="#E8B84B"/>
-    </linearGradient>
-  </defs>
-  <rect width="130" height="130" rx="28" fill="url(#g)"/>
-  <rect x="7" y="7" width="116" height="116" rx="22" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
-  <path d="M34 66 Q34 20 65 20 Q96 20 96 66" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
-  <rect x="24" y="66" width="82" height="50" rx="10" fill="rgba(255,255,255,0.16)" stroke="white" stroke-width="4.5"/>
-  <text x="65" y="92" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="rgba(255,255,255,0.55)" letter-spacing="3.5">SSE</text>
-  <circle cx="105" cy="22" r="11" fill="rgba(255,255,255,0.14)" stroke="white" stroke-width="1.8"/>
-  <path d="M100 23 Q105 15 110 23" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
-  <path d="M105 23 L105 28" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 68">
+  <!-- Handle ring (gold) -->
+  <path d="M 15 28 Q 30 -10 45 28 L 40 28 Q 30 6 20 28 Z" fill="#E8B84B"/>
+  <!-- Bag body / A letterform -->
+  <path fill-rule="evenodd" fill="#C8673A"
+    d="M 15 28 L 4 66 L 56 66 L 45 28 Z M 20 28 L 12 60 L 48 60 L 40 28 Z"/>
+  <!-- Crossbar -->
+  <rect x="7" y="42" width="46" height="5.5" rx="1.5" fill="#C8673A"/>
 </svg>

@@ -39,7 +39,7 @@
     "@type": "Organization",
     "name": "Alorex Packaging LLP",
     "url": "https://alorexpackaging.com",
-    "logo": "https://alorexpackaging.com/favicon.svg",
+    "logo": "https://alorexpackaging.com/Logos/logo.png",
     "description": "India's premier manufacturer of custom non woven bags including W-Cut, U-Cut, D-Cut, Box Bags, Loop Handle and BOPP laminated bags with custom printing.",
     "foundingDate": "2026",
     "email": "info@alorexpackaging.com",
@@ -68,6 +68,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="shortcut icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="Logos/logo.png" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLYBXFL8H7"></script>
@@ -86,19 +87,14 @@
   <div class="page-loader" id="loader">
     <div class="loader-inner">
       <!-- Loader emblem -->
-      <svg class="loader-emblem" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="loaderGrad" x1="0" y1="0" x2="72" y2="72" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FF6B00"/><stop offset="1" stop-color="#E8B84B"/>
-          </linearGradient>
-        </defs>
-        <rect width="72" height="72" rx="16" fill="url(#loaderGrad)"/>
-        <rect x="4" y="4" width="64" height="64" rx="12" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none"/>
-        <path d="M18 37 Q18 12 36 12 Q54 12 54 37" stroke="white" stroke-width="3.2" stroke-linecap="round" fill="none"/>
-        <rect x="13" y="37" width="46" height="26" rx="6" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2.8"/>
-        <line x1="22" y1="51" x2="50" y2="51" stroke="rgba(255,255,255,0.35)" stroke-width="1.2" stroke-dasharray="4 3"/>
-        <circle cx="57" cy="13" r="6" fill="rgba(255,255,255,0.14)" stroke="white" stroke-width="1.2"/>
-        <path d="M54 13.5 Q57 9 60 13.5" stroke="white" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+      <svg class="loader-emblem" viewBox="0 0 60 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Handle ring (gold) -->
+        <path d="M 15 28 Q 30 -10 45 28 L 40 28 Q 30 6 20 28 Z" fill="#E8B84B"/>
+        <!-- Bag body / A letterform -->
+        <path fill-rule="evenodd" fill="#C8673A"
+          d="M 15 28 L 4 66 L 56 66 L 45 28 Z M 20 28 L 12 60 L 48 60 L 40 28 Z"/>
+        <!-- Crossbar -->
+        <rect x="7" y="42" width="46" height="5.5" rx="1.5" fill="#C8673A"/>
       </svg>
       <div class="loader-wordmark">
         <span class="lw-brand">ALOREX</span>
@@ -114,27 +110,25 @@
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-logo" aria-label="Alorex Packaging LLP — Home">
-        <!-- ── INLINE LOGO SVG (Navbar) ── -->
-        <svg class="logo-svg" viewBox="0 0 262 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="nlg" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#C8673A"/><stop offset="1" stop-color="#C89B2E"/>
-            </linearGradient>
-            <clipPath id="nclip"><circle cx="28" cy="28" r="27"/></clipPath>
-          </defs>
-          <!-- Circle emblem -->
-          <circle cx="28" cy="28" r="27" fill="url(#nlg)"/>
-          <circle cx="28" cy="28" r="23.5" stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none"/>
-          <!-- Bag icon -->
-          <g clip-path="url(#nclip)">
-            <path d="M16 30 Q16 11 28 11 Q40 11 40 30" stroke="rgba(255,255,255,0.95)" stroke-width="2.3" stroke-linecap="round" fill="none"/>
-            <rect x="12" y="30" width="32" height="19" rx="4" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.95)" stroke-width="2.1"/>
-          </g>
+        <svg class="logo-svg" viewBox="0 0 256 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Icon mark: A-shaped bag with handle -->
+          <svg x="0" y="1" width="52" height="58" viewBox="0 0 60 68">
+            <!-- Handle ring (gold) -->
+            <path d="M 15 28 Q 30 -10 45 28 L 40 28 Q 30 6 20 28 Z" fill="#E8B84B"/>
+            <!-- Bag body / A letterform (hollow centre via evenodd) -->
+            <path fill-rule="evenodd" fill="#C8673A"
+              d="M 15 28 L 4 66 L 56 66 L 45 28 Z M 20 28 L 12 60 L 48 60 L 40 28 Z"/>
+            <!-- A crossbar / bag opening line -->
+            <rect x="7" y="42" width="46" height="5.5" rx="1.5" fill="#C8673A"/>
+          </svg>
           <!-- Wordmark -->
-          <text x="66" y="22" font-family="Cinzel,Georgia,serif" font-size="20" font-weight="700" fill="#1C2840" letter-spacing="8">ALOREX</text>
-          <rect x="66" y="29" width="164" height="0.8" rx="0.4" fill="#C8673A" opacity="0.5"/>
-          <text x="66" y="41" font-family="Cinzel,Georgia,serif" font-size="8.5" font-weight="400" fill="#C8673A" letter-spacing="3.5">PACKAGING LLP</text>
-          <text x="66" y="52" font-family="Georgia,serif" font-size="7" fill="rgba(30,26,20,0.28)" letter-spacing="1.2" font-style="italic">Premium Non Woven Bags · India</text>
+          <text x="64" y="24" font-family="Cinzel,Georgia,serif" font-size="21" font-weight="700"
+            fill="#1C2840" letter-spacing="5">ALOREX</text>
+          <rect x="64" y="30" width="166" height="0.9" rx="0.45" fill="#C8673A" opacity="0.5"/>
+          <text x="64" y="42" font-family="Cinzel,Georgia,serif" font-size="9.5"
+            fill="#C8673A" letter-spacing="4">PACKAGING LLP</text>
+          <text x="64" y="54" font-family="Georgia,serif" font-size="7" font-style="italic"
+            fill="rgba(28,40,64,0.28)" letter-spacing="1.2">Premium Non Woven Bags · India</text>
         </svg>
       </a>
 
@@ -186,7 +180,7 @@
 
         <div class="hero-cta-group">
           <a href="#products" class="cta-primary">
-            Explore Our Collection
+            <span>Explore Our Collection</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="https://wa.me/919756565319?text=Hello%20Alorex%20Packaging%20LLP%2C%20I%20want%20to%20enquire%20about%20Non%20Woven%20Bags" target="_blank" rel="noopener noreferrer" class="cta-whatsapp">
@@ -232,58 +226,10 @@
           <!-- Background glow -->
           <div class="hvs-glow"></div>
 
-          <!-- Main dashboard panel -->
-          <div class="hvs-panel">
-            <div class="hvs-header">
-              <div class="hvs-apl-badge"><span class="hvs-apl-text">APL</span></div>
-              <div class="hvs-header-info">
-                <strong>Alorex Packaging LLP</strong>
-                <span>New Manufacturing Plant · Est. 2026</span>
-              </div>
-              <div class="hvs-live-pill">
-                <span class="hvs-live-dot"></span><span>Live</span>
-              </div>
-            </div>
-
-            <div class="hvs-divider"></div>
-
-            <div class="hvs-metrics">
-              <div class="hvs-metric">
-                <span class="hvs-m-val">6+</span>
-                <span class="hvs-m-key">Bag Types</span>
-              </div>
-              <div class="hvs-metric hvs-metric--accent">
-                <span class="hvs-m-val">₹4/pc</span>
-                <span class="hvs-m-key">Starting Price</span>
-              </div>
-              <div class="hvs-metric">
-                <span class="hvs-m-val">Pan</span>
-                <span class="hvs-m-key">India Delivery</span>
-              </div>
-              <div class="hvs-metric">
-                <span class="hvs-m-val">8+</span>
-                <span class="hvs-m-key">Yrs Industry Exp.</span>
-              </div>
-            </div>
-
-            <div class="hvs-quality-bar">
-              <div class="hvs-qb-top">
-                <span class="hvs-qb-label">Quality Pass Rate</span>
-                <strong class="hvs-qb-val">99.8%</strong>
-              </div>
-              <div class="hvs-qb-track"><div class="hvs-qb-fill"></div></div>
-            </div>
-
-            <div class="hvs-tags">
-              <span class="hvs-tag">🌿 Eco-Friendly</span>
-              <span class="hvs-tag">🧾 GST Invoice</span>
-              <span class="hvs-tag">🚚 Pan India</span>
-            </div>
-          </div>
 
           <!-- Ladies illustration -->
           <div class="hvs-illustration">
-            <img src="hero-illustration.svg" alt="Two ladies discussing non woven bags from Alorex Packaging" width="360" height="300"/>
+            <img src="illustration.png" alt="Two ladies discussing non woven bags from Alorex Packaging LLP" loading="eager"/>
           </div>
 
         </div>
@@ -1148,27 +1094,20 @@
         <div class="footer-grid">
           <div class="footer-brand-col">
             <div class="footer-logo">
-              <!-- ── INLINE LOGO SVG (Footer) ── -->
-              <svg class="logo-svg logo-svg--footer" viewBox="0 0 262 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="flg" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#C8673A"/><stop offset="1" stop-color="#C89B2E"/>
-                  </linearGradient>
-                  <clipPath id="fclip"><circle cx="28" cy="28" r="27"/></clipPath>
-                </defs>
-                <!-- Circle emblem -->
-                <circle cx="28" cy="28" r="27" fill="url(#flg)"/>
-                <circle cx="28" cy="28" r="23.5" stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none"/>
-                <!-- Bag icon -->
-                <g clip-path="url(#fclip)">
-                  <path d="M16 30 Q16 11 28 11 Q40 11 40 30" stroke="rgba(255,255,255,0.95)" stroke-width="2.3" stroke-linecap="round" fill="none"/>
-                  <rect x="12" y="30" width="32" height="19" rx="4" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.95)" stroke-width="2.1"/>
-                </g>
-                <!-- Wordmark -->
-                <text x="66" y="22" font-family="Cinzel,Georgia,serif" font-size="20" font-weight="700" fill="white" letter-spacing="8" opacity="0.92">ALOREX</text>
-                <rect x="66" y="29" width="164" height="0.8" rx="0.4" fill="#C8673A" opacity="0.6"/>
-                <text x="66" y="41" font-family="Cinzel,Georgia,serif" font-size="8.5" font-weight="400" fill="#C8673A" letter-spacing="3.5">PACKAGING LLP</text>
-                <text x="66" y="52" font-family="Georgia,serif" font-size="7" fill="rgba(255,255,255,0.28)" letter-spacing="1.2" font-style="italic">Premium Non Woven Bags · India</text>
+              <svg class="logo-svg logo-svg--footer" viewBox="0 0 256 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg x="0" y="1" width="52" height="58" viewBox="0 0 60 68">
+                  <path d="M 15 28 Q 30 -10 45 28 L 40 28 Q 30 6 20 28 Z" fill="#E8B84B"/>
+                  <path fill-rule="evenodd" fill="#C8673A"
+                    d="M 15 28 L 4 66 L 56 66 L 45 28 Z M 20 28 L 12 60 L 48 60 L 40 28 Z"/>
+                  <rect x="7" y="42" width="46" height="5.5" rx="1.5" fill="#C8673A"/>
+                </svg>
+                <text x="64" y="24" font-family="Cinzel,Georgia,serif" font-size="21" font-weight="700"
+                  fill="white" letter-spacing="5" opacity="0.93">ALOREX</text>
+                <rect x="64" y="30" width="166" height="0.9" rx="0.45" fill="#E8B84B" opacity="0.6"/>
+                <text x="64" y="42" font-family="Cinzel,Georgia,serif" font-size="9.5"
+                  fill="#E8B84B" letter-spacing="4">PACKAGING LLP</text>
+                <text x="64" y="54" font-family="Georgia,serif" font-size="7" font-style="italic"
+                  fill="rgba(255,255,255,0.26)" letter-spacing="1.2">Premium Non Woven Bags · India</text>
               </svg>
             </div>
             <p class="footer-brand-desc">A new-generation non woven bag manufacturing plant — factory-direct pricing, modern equipment, and packaging crafted to carry your brand's identity.</p>
