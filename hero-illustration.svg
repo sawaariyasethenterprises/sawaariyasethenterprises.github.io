@@ -1,0 +1,207 @@
+<svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <radialGradient id="bgCircle" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF3EC"/>
+      <stop offset="100%" stop-color="rgba(255,243,236,0)"/>
+    </radialGradient>
+    <linearGradient id="bag1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C8673A"/>
+      <stop offset="100%" stop-color="#E8973A"/>
+    </linearGradient>
+    <linearGradient id="bag2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8B84B"/>
+      <stop offset="100%" stop-color="#C8873A"/>
+    </linearGradient>
+    <linearGradient id="dress1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C8673A"/>
+      <stop offset="100%" stop-color="#A0502E"/>
+    </linearGradient>
+    <linearGradient id="dress2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8B84B"/>
+      <stop offset="100%" stop-color="#B88A2A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background soft glow -->
+  <circle cx="180" cy="155" r="138" fill="url(#bgCircle)"/>
+  <circle cx="180" cy="155" r="138" stroke="#F0E0D0" stroke-width="1" opacity="0.5"/>
+
+  <!-- Decorative dots -->
+  <circle cx="42" cy="55" r="5" fill="#C8673A" opacity="0.15"/>
+  <circle cx="318" cy="55" r="5" fill="#E8B84B" opacity="0.15"/>
+  <circle cx="30" cy="225" r="7" fill="#E8B84B" opacity="0.12"/>
+  <circle cx="330" cy="225" r="7" fill="#C8673A" opacity="0.12"/>
+  <circle cx="68" cy="240" r="4" fill="#C8673A" opacity="0.1"/>
+  <circle cx="292" cy="240" r="4" fill="#E8B84B" opacity="0.1"/>
+
+  <!-- ═══════════════════════════
+       LADY 1 — LEFT (facing right)
+  ════════════════════════════ -->
+
+  <!-- Hair (bun + flowing) -->
+  <ellipse cx="98" cy="62" rx="23" ry="16" fill="#2C1A10"/>
+  <path d="M75 70 Q72 95 78 118" stroke="#2C1A10" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="78" cy="58" r="9" fill="#2C1A10"/>
+
+  <!-- Head / face -->
+  <circle cx="98" cy="74" r="20" fill="#F5C9A0"/>
+  <!-- Eyes -->
+  <ellipse cx="91" cy="71" rx="2.5" ry="3" fill="#3B1F0E"/>
+  <ellipse cx="105" cy="71" rx="2.5" ry="3" fill="#3B1F0E"/>
+  <!-- Eye shine -->
+  <circle cx="92" cy="70" r="1" fill="white"/>
+  <circle cx="106" cy="70" r="1" fill="white"/>
+  <!-- Brow -->
+  <path d="M88 66 Q91 64 94 66" stroke="#3B1F0E" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M102 66 Q105 64 108 66" stroke="#3B1F0E" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Smile -->
+  <path d="M93 80 Q98 84 103 80" stroke="#C8673A" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Nose -->
+  <path d="M97 74 Q96 77 98 78" stroke="#D4A070" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Earring -->
+  <circle cx="78" cy="77" r="3" fill="#E8B84B"/>
+  <circle cx="78" cy="82" r="2" fill="#C8673A"/>
+
+  <!-- Neck -->
+  <rect x="92" y="93" width="12" height="13" rx="5" fill="#F5C9A0"/>
+
+  <!-- Kurta / dress body -->
+  <path d="M68 106 Q98 98 128 106 L134 210 L62 210 Z" fill="url(#dress1)"/>
+  <!-- Neckline detail -->
+  <path d="M88 106 Q98 112 108 106" stroke="#E8973A" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <!-- Kurta side pleat -->
+  <path d="M72 130 L68 210" stroke="#A0502E" stroke-width="1.5" opacity="0.4"/>
+  <path d="M124 130 L128 210" stroke="#A0502E" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Dupatta -->
+  <path d="M70 110 Q62 148 58 182" stroke="#E8B84B" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+  <path d="M70 110 Q60 150 56 185" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Right arm extended (holding bag toward centre) -->
+  <path d="M126 122 Q148 128 162 138" stroke="#F5C9A0" stroke-width="11" stroke-linecap="round"/>
+  <!-- Left arm down -->
+  <path d="M70 122 Q60 150 58 175" stroke="#F5C9A0" stroke-width="11" stroke-linecap="round"/>
+  <!-- Hands -->
+  <circle cx="162" cy="139" r="7" fill="#F5C9A0"/>
+  <circle cx="57" cy="176" r="7" fill="#F5C9A0"/>
+
+  <!-- Legs -->
+  <path d="M88 210 Q84 248 82 268" stroke="#3B1F0E" stroke-width="9" stroke-linecap="round"/>
+  <path d="M108 210 Q112 248 114 268" stroke="#3B1F0E" stroke-width="9" stroke-linecap="round"/>
+  <!-- Feet -->
+  <ellipse cx="80" cy="270" rx="10" ry="5" fill="#2C1A10"/>
+  <ellipse cx="116" cy="270" rx="10" ry="5" fill="#2C1A10"/>
+  <!-- Sandal strap -->
+  <path d="M74 268 L86 268" stroke="#C8673A" stroke-width="2"/>
+  <path d="M110 268 L122 268" stroke="#C8673A" stroke-width="2"/>
+
+  <!-- ═══════════════════════════
+       W-CUT BAG — Lady 1 holds
+  ════════════════════════════ -->
+  <g transform="translate(161, 108)">
+    <!-- Bag body -->
+    <path d="M4 35 L0 88 L42 88 L38 35 Z" fill="url(#bag1)" rx="3"/>
+    <!-- W-cut notch at top -->
+    <path d="M4 35 L11 20 L21 32 L31 20 L38 35 Z" fill="#FFF3EC" stroke="#C8673A" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- Bag fold crease -->
+    <line x1="21" y1="35" x2="21" y2="88" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+    <!-- Brand label area -->
+    <rect x="7" y="50" width="28" height="22" rx="3" fill="rgba(255,255,255,0.15)"/>
+    <text x="21" y="64" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle" opacity="0.9">APL</text>
+    <!-- Shine -->
+    <path d="M7 40 Q12 40 12 58" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- ═══════════════════════════
+       LADY 2 — RIGHT (facing left)
+  ════════════════════════════ -->
+
+  <!-- Hair (long + braid) -->
+  <ellipse cx="262" cy="62" rx="23" ry="16" fill="#1A0C06"/>
+  <path d="M285 70 Q288 95 282 118" stroke="#1A0C06" stroke-width="9" stroke-linecap="round"/>
+  <!-- Braid -->
+  <path d="M284 118 Q287 148 284 178" stroke="#1A0C06" stroke-width="6" stroke-linecap="round"/>
+  <path d="M282 118 Q279 148 282 178" stroke="#3B1F0E" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Head / face -->
+  <circle cx="262" cy="74" r="20" fill="#F5C9A0"/>
+  <!-- Eyes -->
+  <ellipse cx="255" cy="71" rx="2.5" ry="3" fill="#3B1F0E"/>
+  <ellipse cx="269" cy="71" rx="2.5" ry="3" fill="#3B1F0E"/>
+  <!-- Eye shine -->
+  <circle cx="256" cy="70" r="1" fill="white"/>
+  <circle cx="270" cy="70" r="1" fill="white"/>
+  <!-- Brow -->
+  <path d="M252 66 Q255 64 258 66" stroke="#3B1F0E" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M266 66 Q269 64 272 66" stroke="#3B1F0E" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Smile -->
+  <path d="M257 80 Q262 84 267 80" stroke="#C8673A" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Nose -->
+  <path d="M263 74 Q264 77 262 78" stroke="#D4A070" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Earring -->
+  <circle cx="282" cy="77" r="3" fill="#E8B84B"/>
+  <circle cx="282" cy="82" r="2" fill="#C8673A"/>
+
+  <!-- Neck -->
+  <rect x="256" y="93" width="12" height="13" rx="5" fill="#F5C9A0"/>
+
+  <!-- Saree / dress body -->
+  <path d="M232 106 Q262 98 292 106 L298 210 L226 210 Z" fill="url(#dress2)"/>
+  <!-- Neckline detail -->
+  <path d="M252 106 Q262 112 272 106" stroke="#C8873A" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <!-- Saree pleat detail -->
+  <path d="M288 128 L292 210" stroke="#B88A2A" stroke-width="1.5" opacity="0.4"/>
+  <path d="M236 128 L232 210" stroke="#B88A2A" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Pallu / dupatta -->
+  <path d="M290 110 Q298 148 302 182" stroke="#C8673A" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+  <path d="M290 110 Q300 150 304 185" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Left arm extended (holding bag toward centre) -->
+  <path d="M234 122 Q212 128 198 138" stroke="#F5C9A0" stroke-width="11" stroke-linecap="round"/>
+  <!-- Right arm down -->
+  <path d="M290 122 Q300 150 302 175" stroke="#F5C9A0" stroke-width="11" stroke-linecap="round"/>
+  <!-- Hands -->
+  <circle cx="198" cy="139" r="7" fill="#F5C9A0"/>
+  <circle cx="303" cy="176" r="7" fill="#F5C9A0"/>
+
+  <!-- Legs -->
+  <path d="M252 210 Q248 248 246 268" stroke="#3B1F0E" stroke-width="9" stroke-linecap="round"/>
+  <path d="M272 210 Q276 248 278 268" stroke="#3B1F0E" stroke-width="9" stroke-linecap="round"/>
+  <!-- Feet -->
+  <ellipse cx="244" cy="270" rx="10" ry="5" fill="#2C1A10"/>
+  <ellipse cx="280" cy="270" rx="10" ry="5" fill="#2C1A10"/>
+  <!-- Sandal strap -->
+  <path d="M238 268 L250 268" stroke="#E8B84B" stroke-width="2"/>
+  <path d="M274 268 L286 268" stroke="#E8B84B" stroke-width="2"/>
+
+  <!-- ═══════════════════════════
+       D-CUT BAG — Lady 2 holds
+  ════════════════════════════ -->
+  <g transform="translate(157, 108)">
+    <!-- Bag body -->
+    <path d="M4 35 L0 88 L42 88 L38 35 Z" fill="url(#bag2)"/>
+    <!-- D-cut hole at top -->
+    <path d="M4 35 Q21 22 38 35 Q30 42 21 43 Q12 42 4 35 Z" fill="#FFF8EC" stroke="#E8B84B" stroke-width="1.5"/>
+    <!-- Fold crease -->
+    <line x1="21" y1="45" x2="21" y2="88" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+    <!-- Brand label -->
+    <rect x="7" y="52" width="28" height="22" rx="3" fill="rgba(255,255,255,0.15)"/>
+    <text x="21" y="66" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle" opacity="0.9">APL</text>
+    <!-- Shine -->
+    <path d="M7 48 Q12 48 12 65" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- ═══════════════════════════
+       CONVERSATION BUBBLES
+  ════════════════════════════ -->
+  <circle cx="155" cy="88" r="5" fill="#C8673A" opacity="0.35"/>
+  <circle cx="172" cy="80" r="7" fill="#C8673A" opacity="0.25"/>
+  <circle cx="190" cy="75" r="5" fill="#E8B84B" opacity="0.35"/>
+
+  <!-- Ground shadow -->
+  <ellipse cx="100" cy="276" rx="42" ry="6" fill="#C8673A" opacity="0.08"/>
+  <ellipse cx="260" cy="276" rx="42" ry="6" fill="#E8B84B" opacity="0.08"/>
+</svg>
