@@ -213,7 +213,8 @@ phoneInput && phoneInput.addEventListener('input', () => {
   }
 });
 
-const WEB3FORMS_KEY = 'fb3113a7-498d-41f2-bbbf-8931633a3d2f';
+const WEB3FORMS_KEY  = 'fb3113a7-498d-41f2-bbbf-8931633a3d2f';
+const SHEETS_URL     = 'https://script.google.com/macros/s/AKfycbyOIoetvHS_OwJxXwX7fxgjDs3vXrRSo1HgW35alKpiB8Z-f_uElSoxkLJlULRH0AY/exec';
 const WA_NUMBER     = '917055598280';
 
 form && form.addEventListener('submit', async e => {
@@ -267,6 +268,14 @@ form && form.addEventListener('submit', async e => {
     payload.append('Source',             'sawaariyasethenterprises.github.io');
 
     await fetch('https://api.web3forms.com/submit', { method: 'POST', body: payload });
+  } catch (_) { /* silent */ }
+
+  /* ── 2. Save to Google Sheets ── */
+  try {
+    await fetch(SHEETS_URL, {
+      method: 'POST',
+      body: JSON.stringify({ name, phone, email, city, bagType, bagSize, qty, printing: printLabel, specs }),
+    });
   } catch (_) { /* silent */ }
 
   /* ── 2. Reset UI ── */
