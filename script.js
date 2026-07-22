@@ -215,7 +215,7 @@ phoneInput && phoneInput.addEventListener('input', () => {
 
 const WEB3FORMS_KEY  = 'fb3113a7-498d-41f2-bbbf-8931633a3d2f';
 const SHEETS_URL     = 'https://script.google.com/macros/s/AKfycbyOIoetvHS_OwJxXwX7fxgjDs3vXrRSo1HgW35alKpiB8Z-f_uElSoxkLJlULRH0AY/exec';
-const WA_NUMBER     = '917055598280';
+const WA_NUMBER     = '919756565319';
 
 form && form.addEventListener('submit', async e => {
   e.preventDefault();
@@ -359,8 +359,8 @@ function createStickyBar() {
   const bar = document.createElement('div');
   bar.className = 'sticky-cta-bar';
   bar.innerHTML = `
-    <a href="tel:+917055598280" class="scb-call">📞 Call</a>
-    <a href="https://wa.me/917055598280" target="_blank" rel="noopener noreferrer" class="scb-wa">💬 WhatsApp</a>
+    <a href="tel:+919756565319" class="scb-call">📞 Call</a>
+    <a href="https://wa.me/919756565319" target="_blank" rel="noopener noreferrer" class="scb-wa">💬 WhatsApp</a>
     <a href="#contact" class="scb-quote">Get Quote</a>
   `;
   document.body.appendChild(bar);
