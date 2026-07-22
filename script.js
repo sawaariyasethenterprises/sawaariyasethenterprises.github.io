@@ -20,18 +20,11 @@ const hamburger = document.getElementById('hamburger');
 const navMenu   = document.getElementById('navMenu');
 hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('open');
-  const spans = hamburger.querySelectorAll('span');
-  if (navMenu.classList.contains('open')) {
-    spans[0].style.cssText = 'transform:rotate(45deg) translate(5px,5px)';
-    spans[1].style.cssText = 'opacity:0';
-    spans[2].style.cssText = 'transform:rotate(-45deg) translate(5px,-5px)';
-  } else {
-    spans.forEach(s => s.style.cssText = '');
-  }
+  hamburger.classList.toggle('open');
 });
 navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   navMenu.classList.remove('open');
-  hamburger.querySelectorAll('span').forEach(s => s.style.cssText = '');
+  hamburger.classList.remove('open');
 }));
 
 /* ── SMOOTH SCROLL ── */
@@ -122,6 +115,10 @@ const RULES = {
              msg: v => v.trim().length < 2 ? 'Please enter your city and state' : '' },
   bagType: { id: 'inp-bagtype', fld: 'fld-bagtype',
              msg: () => selectedBags.length === 0 ? 'Please select at least one bag type' : '' },
+  qty:     { id: 'inp-qty',     fld: 'fld-qty',
+             msg: v => v.trim().length === 0 ? 'Please enter an approximate quantity' : '' },
+  size:    { id: 'inp-size',   fld: 'fld-size',
+             msg: () => selectedSizes.length === 0 ? 'Please select at least one bag size' : '' },
 };
 
 function showError(rule, message) {
@@ -158,7 +155,7 @@ Object.values(RULES).forEach(rule => {
 
 /* ── BAG CHIP MULTI-SELECT ── */
 const selectedBags = [];
-document.querySelectorAll('.bag-chip').forEach(chip => {
+document.querySelectorAll('#bag-chips .bag-chip').forEach(chip => {
   chip.addEventListener('click', () => {
     const val = chip.dataset.value;
     const idx = selectedBags.indexOf(val);
@@ -167,6 +164,20 @@ document.querySelectorAll('.bag-chip').forEach(chip => {
     document.getElementById('inp-bagtype').value = selectedBags.join(', ');
     const fldEl = document.getElementById('fld-bagtype');
     if (fldEl && fldEl.classList.contains('fld--error')) validateField(RULES.bagType);
+  });
+});
+
+/* ── SIZE CHIP MULTI-SELECT ── */
+const selectedSizes = [];
+document.querySelectorAll('#size-chips .bag-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const val = chip.dataset.value;
+    const idx = selectedSizes.indexOf(val);
+    if (idx === -1) { selectedSizes.push(val); chip.classList.add('selected'); }
+    else            { selectedSizes.splice(idx, 1); chip.classList.remove('selected'); }
+    document.getElementById('inp-size').value = selectedSizes.join(', ');
+    const fldEl = document.getElementById('fld-size');
+    if (fldEl && fldEl.classList.contains('fld--error')) validateField(RULES.size);
   });
 });
 
@@ -225,6 +236,7 @@ form && form.addEventListener('submit', async e => {
   const city       = document.getElementById('inp-city').value.trim();
   const bagType    = selectedBags.join(', ');
   const qty        = document.getElementById('inp-qty').value.trim();
+  const bagSize    = document.getElementById('inp-size').value.trim();
   const printing   = document.getElementById('inp-print').value;
   const specs      = document.getElementById('inp-specs').value.trim();
   const printLabel = printing === 'yes' ? 'Yes — With Logo Printing' : 'No — Plain Bags Required';
@@ -246,6 +258,7 @@ form && form.addEventListener('submit', async e => {
     payload.append('-- ORDER REQUIREMENTS --', '───────────────────────────');
     payload.append('Bag Type Required',  bagType);
     payload.append('Approx. Quantity',   qty        || 'Not specified');
+    payload.append('Size of Bags',       bagSize    || 'Not specified');
     payload.append('Custom Printing',    printLabel);
     payload.append('-- SPECIFICATIONS --', '───────────────────────────');
     payload.append('Additional Notes',   specs      || 'None provided');
