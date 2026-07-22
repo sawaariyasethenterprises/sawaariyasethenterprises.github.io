@@ -250,7 +250,7 @@ form && form.addEventListener('submit', async e => {
     payload.append('access_key',         WEB3FORMS_KEY);
     payload.append('subject',            `New Enquiry: ${bagType} — ${name} (${city})`);
     payload.append('from_name',          'Alorex Packaging LLP Website');
-    payload.append('replyto',            email || 'sawaariyasethenterprises@gmail.com');
+    payload.append('replyto',            email || 'alorexpackaging@gmail.com');
     payload.append('-- CUSTOMER DETAILS --', '───────────────────────────');
     payload.append('Full Name',          name);
     payload.append('Mobile Number',      phone);
@@ -265,7 +265,7 @@ form && form.addEventListener('submit', async e => {
     payload.append('Additional Notes',   specs      || 'None provided');
     payload.append('-- META --',         '───────────────────────────');
     payload.append('Received At',        timestamp + ' IST');
-    payload.append('Source',             'sawaariyasethenterprises.github.io');
+    payload.append('Source',             'alorexpackaging.com');
 
     await fetch('https://api.web3forms.com/submit', { method: 'POST', body: payload });
   } catch (_) { /* silent */ }
