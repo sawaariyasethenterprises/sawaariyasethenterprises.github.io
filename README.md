@@ -8,7 +8,7 @@ A fully responsive, production-ready static website for **Alorex Packaging LLP**
 
 ## Live Website
 
-[sawaariyasethenterprises.github.io/Sawaariya-Seth-](https://sawaariyasethenterprises.github.io/Sawaariya-Seth-)
+[alorexpackaging.com](https://alorexpackaging,com)
 
 ---
 
