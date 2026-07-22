@@ -250,7 +250,7 @@ form && form.addEventListener('submit', async e => {
     payload.append('access_key',         WEB3FORMS_KEY);
     payload.append('subject',            `New Enquiry: ${bagType} — ${name} (${city})`);
     payload.append('from_name',          'Alorex Packaging LLP Website');
-    payload.append('replyto',            email || 'alorexpackaging@gmail.com');
+    payload.append('replyto',            email || 'info@alorexpackaging.com');
     payload.append('-- CUSTOMER DETAILS --', '───────────────────────────');
     payload.append('Full Name',          name);
     payload.append('Mobile Number',      phone);
