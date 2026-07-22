@@ -214,7 +214,7 @@ phoneInput && phoneInput.addEventListener('input', () => {
 });
 
 const WEB3FORMS_KEY  = 'fb3113a7-498d-41f2-bbbf-8931633a3d2f';
-const SHEETS_URL     = 'https://script.google.com/macros/s/AKfycbyOIoetvHS_OwJxXwX7fxgjDs3vXrRSo1HgW35alKpiB8Z-f_uElSoxkLJlULRH0AY/exec';
+const SHEETS_URL     = 'https://script.google.com/macros/s/AKfycbx_cn2xSVxf2qcCFGYtICuss7cF-c4pHOvc_7Q0-adBrdJDjcX3qymrcK-XqIBAP0Gg/exec';
 const WA_NUMBER     = '919756565319';
 
 form && form.addEventListener('submit', async e => {
@@ -272,8 +272,9 @@ form && form.addEventListener('submit', async e => {
 
   /* ── 2. Save to Google Sheets ── */
   try {
-    await fetch(SHEETS_URL, {
+    fetch(SHEETS_URL, {
       method: 'POST',
+      mode: 'no-cors',
       body: JSON.stringify({ name, phone, email, city, bagType, bagSize, qty, printing: printLabel, specs }),
     });
   } catch (_) { /* silent */ }
