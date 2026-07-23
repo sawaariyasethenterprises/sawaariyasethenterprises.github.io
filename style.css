@@ -611,14 +611,14 @@ img { max-width: 100%; display: block; }
 .prod-card {
   background: var(--white); border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  overflow: hidden; transition: var(--transition);
+  overflow: hidden; transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease, border-color 0.3s ease;
   box-shadow: var(--shadow);
   display: flex; flex-direction: column;
 }
 .prod-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(255,107,0,0.25);
+  transform: translateY(-10px);
+  box-shadow: 0 24px 48px rgba(200,103,58,0.18);
+  border-color: rgba(255,107,0,0.35);
 }
 .featured-prod {
   background: linear-gradient(160deg, var(--navy-700) 0%, var(--navy-800) 100%);
@@ -634,6 +634,22 @@ img { max-width: 100%; display: block; }
 .prod-header {
   height: 200px; position: relative;
   display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.prod-header img {
+  transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.prod-card:hover .prod-header img {
+  transform: scale(1.08);
+}
+.prod-header::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(200,103,58,0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+.prod-card:hover .prod-header::after {
+  background: rgba(200,103,58,0.08);
 }
 .ph-wcut  { background: linear-gradient(135deg, #FFF5EC, #FFE0C8); }
 .ph-ucut  { background: linear-gradient(135deg, #EBF5FB, #D0E8F7); }
@@ -722,8 +738,10 @@ img { max-width: 100%; display: block; }
   background: rgba(255,107,0,0.08); border: 1px solid rgba(255,107,0,0.2);
   border-radius: 50px; color: var(--saffron);
 }
-.prod-cta { font-size: 0.85rem; font-weight: 700; color: var(--saffron); transition: gap 0.2s; display: flex; align-items: center; gap: 4px; }
-.prod-cta:hover { gap: 8px; }
+.prod-cta { font-size: 0.85rem; font-weight: 700; color: var(--saffron); transition: color 0.2s, letter-spacing 0.2s; display: flex; align-items: center; gap: 6px; }
+.prod-cta span.arrow { display: inline-block; transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1); }
+.prod-card:hover .prod-cta { letter-spacing: 0.01em; }
+.prod-card:hover .prod-cta span.arrow { transform: translateX(5px); }
 
 /* ══════════════════════════════════════
    PRINTING
