@@ -34,6 +34,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (!target) return;
     e.preventDefault();
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (a.getAttribute('href') === '#contact') {
+      setTimeout(() => {
+        const firstField = document.getElementById('inp-name');
+        if (firstField) firstField.focus();
+      }, 700);
+    }
   });
 });
 
@@ -400,7 +406,7 @@ window.addEventListener('scroll', () => {
           <span>🎊</span><span>✨</span><span>🎉</span>
         </div>
         <div class="cb-ty-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         <h3 class="cb-ty-title">Thank You, ${name}!</h3>
         <p class="cb-ty-msg">Our team will reach you within <span class="cb-ty-highlight">2 hours</span> with pricing &amp; a free sample dispatch.</p>

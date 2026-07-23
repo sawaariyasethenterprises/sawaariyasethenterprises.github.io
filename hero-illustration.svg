@@ -1,207 +1,453 @@
-<svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+<svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="bgCircle" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFF3EC"/>
-      <stop offset="100%" stop-color="rgba(255,243,236,0)"/>
+    <!-- Filters -->
+    <filter id="drop-shadow" x="-20%" y="-10%" width="150%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="rgba(30,20,10,0.18)"/>
+    </filter>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="5" flood-color="rgba(30,20,10,0.22)"/>
+    </filter>
+
+    <!-- Skin gradients -->
+    <radialGradient id="skin-L" cx="45%" cy="38%" r="58%">
+      <stop offset="0%" stop-color="#F8D5A8"/>
+      <stop offset="60%" stop-color="#EDB97A"/>
+      <stop offset="100%" stop-color="#D4935A"/>
     </radialGradient>
-    <linearGradient id="bag1" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#C8673A"/>
-      <stop offset="100%" stop-color="#E8973A"/>
+    <radialGradient id="skin-R" cx="55%" cy="38%" r="58%">
+      <stop offset="0%" stop-color="#F5D0A0"/>
+      <stop offset="60%" stop-color="#E8AA68"/>
+      <stop offset="100%" stop-color="#C8884A"/>
+    </radialGradient>
+    <linearGradient id="skin-arm-L" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EDB97A"/>
+      <stop offset="100%" stop-color="#D4935A"/>
     </linearGradient>
-    <linearGradient id="bag2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#E8B84B"/>
-      <stop offset="100%" stop-color="#C8873A"/>
+    <linearGradient id="skin-arm-R" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D4935A"/>
+      <stop offset="100%" stop-color="#E8AA68"/>
     </linearGradient>
-    <linearGradient id="dress1" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#C8673A"/>
-      <stop offset="100%" stop-color="#A0502E"/>
+
+    <!-- Dress gradients — Lady 1: Saffron Kurta -->
+    <linearGradient id="kurta1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D97840"/>
+      <stop offset="40%" stop-color="#C8673A"/>
+      <stop offset="100%" stop-color="#8E4525"/>
     </linearGradient>
-    <linearGradient id="dress2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#E8B84B"/>
-      <stop offset="100%" stop-color="#B88A2A"/>
+    <linearGradient id="kurta1-shadow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.15)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
     </linearGradient>
+
+    <!-- Dress gradients — Lady 2: Teal Saree -->
+    <linearGradient id="saree2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A9080"/>
+      <stop offset="40%" stop-color="#1E7A6C"/>
+      <stop offset="100%" stop-color="#124E44"/>
+    </linearGradient>
+    <linearGradient id="saree2-shadow" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.18)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </linearGradient>
+
+    <!-- Bag 1 — Saffron W-Cut non-woven bag -->
+    <linearGradient id="bag1-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B85E30"/>
+      <stop offset="25%" stop-color="#D9783E"/>
+      <stop offset="75%" stop-color="#C86835"/>
+      <stop offset="100%" stop-color="#9A4C24"/>
+    </linearGradient>
+    <linearGradient id="bag1-side" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C86835"/>
+      <stop offset="100%" stop-color="#7A3A1A"/>
+    </linearGradient>
+    <linearGradient id="bag1-top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E0885A"/>
+      <stop offset="100%" stop-color="#C86835"/>
+    </linearGradient>
+
+    <!-- Bag 2 — Cream/Beige D-Cut non-woven bag -->
+    <linearGradient id="bag2-body" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#A87820"/>
+      <stop offset="25%" stop-color="#D4A040"/>
+      <stop offset="75%" stop-color="#C09030"/>
+      <stop offset="100%" stop-color="#E8C060"/>
+    </linearGradient>
+    <linearGradient id="bag2-top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8C878"/>
+      <stop offset="100%" stop-color="#C09030"/>
+    </linearGradient>
+
+    <!-- Non-woven fabric texture -->
+    <pattern id="fabric" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="2.5" x2="5" y2="2.5" stroke="rgba(255,255,255,0.07)" stroke-width="0.7"/>
+      <line x1="2.5" y1="0" x2="2.5" y2="5" stroke="rgba(255,255,255,0.05)" stroke-width="0.7"/>
+    </pattern>
+    <pattern id="fabric2" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="2.5" x2="5" y2="2.5" stroke="rgba(0,0,0,0.06)" stroke-width="0.7"/>
+      <line x1="2.5" y1="0" x2="2.5" y2="5" stroke="rgba(0,0,0,0.05)" stroke-width="0.7"/>
+    </pattern>
+
+    <!-- Hair gradients -->
+    <linearGradient id="hair1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3A2010"/>
+      <stop offset="60%" stop-color="#1E1008"/>
+      <stop offset="100%" stop-color="#0A0604"/>
+    </linearGradient>
+    <linearGradient id="hair2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A1808"/>
+      <stop offset="60%" stop-color="#150C04"/>
+      <stop offset="100%" stop-color="#050302"/>
+    </linearGradient>
+
+    <!-- Background -->
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF5EE"/>
+      <stop offset="70%" stop-color="#FAF0E6"/>
+      <stop offset="100%" stop-color="rgba(255,245,238,0)"/>
+    </radialGradient>
   </defs>
 
-  <!-- Background soft glow -->
-  <circle cx="180" cy="155" r="138" fill="url(#bgCircle)"/>
-  <circle cx="180" cy="155" r="138" stroke="#F0E0D0" stroke-width="1" opacity="0.5"/>
+  <!-- ── BACKGROUND ── -->
+  <ellipse cx="210" cy="195" rx="185" ry="170" fill="url(#bg)"/>
+  <ellipse cx="210" cy="195" rx="185" ry="170" stroke="#F0E0D0" stroke-width="1" fill="none" opacity="0.6"/>
 
-  <!-- Decorative dots -->
-  <circle cx="42" cy="55" r="5" fill="#C8673A" opacity="0.15"/>
-  <circle cx="318" cy="55" r="5" fill="#E8B84B" opacity="0.15"/>
-  <circle cx="30" cy="225" r="7" fill="#E8B84B" opacity="0.12"/>
-  <circle cx="330" cy="225" r="7" fill="#C8673A" opacity="0.12"/>
-  <circle cx="68" cy="240" r="4" fill="#C8673A" opacity="0.1"/>
-  <circle cx="292" cy="240" r="4" fill="#E8B84B" opacity="0.1"/>
+  <!-- Decorative circles -->
+  <circle cx="38" cy="48" r="6" fill="#C8673A" opacity="0.12"/>
+  <circle cx="382" cy="48" r="6" fill="#E8B84B" opacity="0.12"/>
+  <circle cx="22" cy="310" r="9" fill="#E8B84B" opacity="0.10"/>
+  <circle cx="398" cy="310" r="9" fill="#C8673A" opacity="0.10"/>
+  <circle cx="60" cy="340" r="4" fill="#C8673A" opacity="0.08"/>
+  <circle cx="360" cy="340" r="4" fill="#E8B84B" opacity="0.08"/>
 
-  <!-- ═══════════════════════════
-       LADY 1 — LEFT (facing right)
+  <!-- ════════════════════════════
+       GROUND SHADOWS
+  ════════════════════════════ -->
+  <ellipse cx="98" cy="358" rx="52" ry="8" fill="rgba(0,0,0,0.10)"/>
+  <ellipse cx="322" cy="358" rx="52" ry="8" fill="rgba(0,0,0,0.10)"/>
+
+
+  <!-- ════════════════════════════
+       LADY 1 — LEFT (Saffron Kurta)
   ════════════════════════════ -->
 
-  <!-- Hair (bun + flowing) -->
-  <ellipse cx="98" cy="62" rx="23" ry="16" fill="#2C1A10"/>
-  <path d="M75 70 Q72 95 78 118" stroke="#2C1A10" stroke-width="9" stroke-linecap="round"/>
-  <circle cx="78" cy="58" r="9" fill="#2C1A10"/>
+  <!-- Legs -->
+  <path d="M84 268 Q80 308 78 348" stroke="#C8673A" stroke-width="12" stroke-linecap="round" filter="url(#soft-shadow)"/>
+  <path d="M112 268 Q116 308 118 348" stroke="#8E4525" stroke-width="12" stroke-linecap="round"/>
+  <!-- Feet -->
+  <ellipse cx="76" cy="350" rx="14" ry="6" fill="#2C1A10"/>
+  <ellipse cx="120" cy="350" rx="14" ry="6" fill="#2C1A10"/>
+  <!-- Sandal straps -->
+  <path d="M68 348 Q76 344 84 348" stroke="#E8B84B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M112 348 Q120 344 128 348" stroke="#E8B84B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M70 353 Q76 350 82 353" stroke="#E8B84B" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <path d="M114 353 Q120 350 126 353" stroke="#E8B84B" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 
-  <!-- Head / face -->
-  <circle cx="98" cy="74" r="20" fill="#F5C9A0"/>
-  <!-- Eyes -->
-  <ellipse cx="91" cy="71" rx="2.5" ry="3" fill="#3B1F0E"/>
-  <ellipse cx="105" cy="71" rx="2.5" ry="3" fill="#3B1F0E"/>
-  <!-- Eye shine -->
-  <circle cx="92" cy="70" r="1" fill="white"/>
-  <circle cx="106" cy="70" r="1" fill="white"/>
-  <!-- Brow -->
-  <path d="M88 66 Q91 64 94 66" stroke="#3B1F0E" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M102 66 Q105 64 108 66" stroke="#3B1F0E" stroke-width="1.5" stroke-linecap="round"/>
-  <!-- Smile -->
-  <path d="M93 80 Q98 84 103 80" stroke="#C8673A" stroke-width="1.8" stroke-linecap="round"/>
-  <!-- Nose -->
-  <path d="M97 74 Q96 77 98 78" stroke="#D4A070" stroke-width="1.2" stroke-linecap="round"/>
-
-  <!-- Earring -->
-  <circle cx="78" cy="77" r="3" fill="#E8B84B"/>
-  <circle cx="78" cy="82" r="2" fill="#C8673A"/>
-
-  <!-- Neck -->
-  <rect x="92" y="93" width="12" height="13" rx="5" fill="#F5C9A0"/>
-
-  <!-- Kurta / dress body -->
-  <path d="M68 106 Q98 98 128 106 L134 210 L62 210 Z" fill="url(#dress1)"/>
-  <!-- Neckline detail -->
-  <path d="M88 106 Q98 112 108 106" stroke="#E8973A" stroke-width="1.5" fill="none" opacity="0.6"/>
-  <!-- Kurta side pleat -->
-  <path d="M72 130 L68 210" stroke="#A0502E" stroke-width="1.5" opacity="0.4"/>
-  <path d="M124 130 L128 210" stroke="#A0502E" stroke-width="1.5" opacity="0.4"/>
+  <!-- Kurta body -->
+  <path d="M62 112 Q98 104 134 112 L140 270 L56 270 Z" fill="url(#kurta1)" filter="url(#drop-shadow)"/>
+  <!-- Kurta shadow overlay left side -->
+  <path d="M62 112 Q75 112 82 140 L74 270 L56 270 L62 112 Z" fill="rgba(0,0,0,0.12)"/>
+  <!-- Kurta fold details -->
+  <path d="M86 115 Q88 180 86 268" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" fill="none"/>
+  <path d="M110 115 Q108 180 110 268" stroke="rgba(0,0,0,0.1)" stroke-width="1.5" fill="none"/>
+  <!-- Kurta hem border -->
+  <path d="M58 268 L140 268" stroke="#E8973A" stroke-width="2.5" opacity="0.6"/>
+  <!-- Neckline -->
+  <path d="M84 113 Q98 120 112 113" stroke="#E8973A" stroke-width="2" fill="none" opacity="0.7"/>
 
   <!-- Dupatta -->
-  <path d="M70 110 Q62 148 58 182" stroke="#E8B84B" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
-  <path d="M70 110 Q60 150 56 185" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M62 118 Q48 158 44 210 Q42 240 46 265" stroke="#E8B84B" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M62 118 Q50 160 46 212 Q44 242 48 267" stroke="rgba(255,255,255,0.3)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
 
-  <!-- Right arm extended (holding bag toward centre) -->
-  <path d="M126 122 Q148 128 162 138" stroke="#F5C9A0" stroke-width="11" stroke-linecap="round"/>
-  <!-- Left arm down -->
-  <path d="M70 122 Q60 150 58 175" stroke="#F5C9A0" stroke-width="11" stroke-linecap="round"/>
-  <!-- Hands -->
-  <circle cx="162" cy="139" r="7" fill="#F5C9A0"/>
-  <circle cx="57" cy="176" r="7" fill="#F5C9A0"/>
-
-  <!-- Legs -->
-  <path d="M88 210 Q84 248 82 268" stroke="#3B1F0E" stroke-width="9" stroke-linecap="round"/>
-  <path d="M108 210 Q112 248 114 268" stroke="#3B1F0E" stroke-width="9" stroke-linecap="round"/>
-  <!-- Feet -->
-  <ellipse cx="80" cy="270" rx="10" ry="5" fill="#2C1A10"/>
-  <ellipse cx="116" cy="270" rx="10" ry="5" fill="#2C1A10"/>
-  <!-- Sandal strap -->
-  <path d="M74 268 L86 268" stroke="#C8673A" stroke-width="2"/>
-  <path d="M110 268 L122 268" stroke="#C8673A" stroke-width="2"/>
-
-  <!-- ═══════════════════════════
-       W-CUT BAG — Lady 1 holds
-  ════════════════════════════ -->
-  <g transform="translate(161, 108)">
-    <!-- Bag body -->
-    <path d="M4 35 L0 88 L42 88 L38 35 Z" fill="url(#bag1)" rx="3"/>
-    <!-- W-cut notch at top -->
-    <path d="M4 35 L11 20 L21 32 L31 20 L38 35 Z" fill="#FFF3EC" stroke="#C8673A" stroke-width="1.5" stroke-linejoin="round"/>
-    <!-- Bag fold crease -->
-    <line x1="21" y1="35" x2="21" y2="88" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-    <!-- Brand label area -->
-    <rect x="7" y="50" width="28" height="22" rx="3" fill="rgba(255,255,255,0.15)"/>
-    <text x="21" y="64" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle" opacity="0.9">APL</text>
-    <!-- Shine -->
-    <path d="M7 40 Q12 40 12 58" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round"/>
-  </g>
-
-  <!-- ═══════════════════════════
-       LADY 2 — RIGHT (facing left)
-  ════════════════════════════ -->
-
-  <!-- Hair (long + braid) -->
-  <ellipse cx="262" cy="62" rx="23" ry="16" fill="#1A0C06"/>
-  <path d="M285 70 Q288 95 282 118" stroke="#1A0C06" stroke-width="9" stroke-linecap="round"/>
-  <!-- Braid -->
-  <path d="M284 118 Q287 148 284 178" stroke="#1A0C06" stroke-width="6" stroke-linecap="round"/>
-  <path d="M282 118 Q279 148 282 178" stroke="#3B1F0E" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-
-  <!-- Head / face -->
-  <circle cx="262" cy="74" r="20" fill="#F5C9A0"/>
-  <!-- Eyes -->
-  <ellipse cx="255" cy="71" rx="2.5" ry="3" fill="#3B1F0E"/>
-  <ellipse cx="269" cy="71" rx="2.5" ry="3" fill="#3B1F0E"/>
-  <!-- Eye shine -->
-  <circle cx="256" cy="70" r="1" fill="white"/>
-  <circle cx="270" cy="70" r="1" fill="white"/>
-  <!-- Brow -->
-  <path d="M252 66 Q255 64 258 66" stroke="#3B1F0E" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M266 66 Q269 64 272 66" stroke="#3B1F0E" stroke-width="1.5" stroke-linecap="round"/>
-  <!-- Smile -->
-  <path d="M257 80 Q262 84 267 80" stroke="#C8673A" stroke-width="1.8" stroke-linecap="round"/>
-  <!-- Nose -->
-  <path d="M263 74 Q264 77 262 78" stroke="#D4A070" stroke-width="1.2" stroke-linecap="round"/>
-
-  <!-- Earring -->
-  <circle cx="282" cy="77" r="3" fill="#E8B84B"/>
-  <circle cx="282" cy="82" r="2" fill="#C8673A"/>
+  <!-- Right arm (extended to hold bag) -->
+  <path d="M132 128 Q154 134 168 142" stroke="url(#skin-arm-L)" stroke-width="14" stroke-linecap="round"/>
+  <path d="M132 128 Q154 136 168 144" stroke="rgba(0,0,0,0.08)" stroke-width="14" stroke-linecap="round"/>
+  <!-- Left arm (natural at side) -->
+  <path d="M64 128 Q52 162 50 200" stroke="url(#skin-arm-L)" stroke-width="13" stroke-linecap="round"/>
 
   <!-- Neck -->
-  <rect x="256" y="93" width="12" height="13" rx="5" fill="#F5C9A0"/>
+  <path d="M88 98 Q98 95 108 98 L110 114 Q98 118 86 114 Z" fill="url(#skin-L)"/>
 
-  <!-- Saree / dress body -->
-  <path d="M232 106 Q262 98 292 106 L298 210 L226 210 Z" fill="url(#dress2)"/>
-  <!-- Neckline detail -->
-  <path d="M252 106 Q262 112 272 106" stroke="#C8873A" stroke-width="1.5" fill="none" opacity="0.6"/>
-  <!-- Saree pleat detail -->
-  <path d="M288 128 L292 210" stroke="#B88A2A" stroke-width="1.5" opacity="0.4"/>
-  <path d="M236 128 L232 210" stroke="#B88A2A" stroke-width="1.5" opacity="0.4"/>
+  <!-- ── FACE ── -->
+  <!-- Face base shape -->
+  <ellipse cx="98" cy="76" rx="22" ry="25" fill="url(#skin-L)" filter="url(#soft-shadow)"/>
+  <!-- Cheek shading -->
+  <ellipse cx="86" cy="82" rx="7" ry="5" fill="rgba(220,120,80,0.18)"/>
+  <ellipse cx="110" cy="82" rx="7" ry="5" fill="rgba(220,120,80,0.18)"/>
+  <!-- Chin definition -->
+  <path d="M88 96 Q98 102 108 96" stroke="rgba(180,100,50,0.2)" stroke-width="1.5" fill="none"/>
 
-  <!-- Pallu / dupatta -->
-  <path d="M290 110 Q298 148 302 182" stroke="#C8673A" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
-  <path d="M290 110 Q300 150 304 185" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Eyebrows -->
+  <path d="M85 66 Q89 63 93 65" stroke="#2C1A10" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <path d="M103 65 Q107 63 111 66" stroke="#2C1A10" stroke-width="2.2" stroke-linecap="round" fill="none"/>
 
-  <!-- Left arm extended (holding bag toward centre) -->
-  <path d="M234 122 Q212 128 198 138" stroke="#F5C9A0" stroke-width="11" stroke-linecap="round"/>
-  <!-- Right arm down -->
-  <path d="M290 122 Q300 150 302 175" stroke="#F5C9A0" stroke-width="11" stroke-linecap="round"/>
-  <!-- Hands -->
-  <circle cx="198" cy="139" r="7" fill="#F5C9A0"/>
-  <circle cx="303" cy="176" r="7" fill="#F5C9A0"/>
+  <!-- Eyes -->
+  <!-- Left eye -->
+  <ellipse cx="89" cy="72" rx="5" ry="3.5" fill="white"/>
+  <ellipse cx="89" cy="72" rx="3" ry="3" fill="#3A1E0C"/>
+  <ellipse cx="89" cy="72" rx="1.5" ry="1.5" fill="#0A0604"/>
+  <circle cx="90.5" cy="71" r="1" fill="white"/>
+  <!-- Left eyelid -->
+  <path d="M84 70 Q89 67 94 70" stroke="#2C1A10" stroke-width="1.2" fill="none"/>
+  <path d="M84 74 Q89 77 94 74" stroke="rgba(180,100,60,0.4)" stroke-width="0.8" fill="none"/>
+  <!-- Right eye -->
+  <ellipse cx="107" cy="72" rx="5" ry="3.5" fill="white"/>
+  <ellipse cx="107" cy="72" rx="3" ry="3" fill="#3A1E0C"/>
+  <ellipse cx="107" cy="72" rx="1.5" ry="1.5" fill="#0A0604"/>
+  <circle cx="108.5" cy="71" r="1" fill="white"/>
+  <!-- Right eyelid -->
+  <path d="M102 70 Q107 67 112 70" stroke="#2C1A10" stroke-width="1.2" fill="none"/>
+  <path d="M102 74 Q107 77 112 74" stroke="rgba(180,100,60,0.4)" stroke-width="0.8" fill="none"/>
+
+  <!-- Nose -->
+  <path d="M97 74 Q95 79 96 82 Q98 84 100 82 Q101 79 99 74" stroke="rgba(180,100,50,0.4)" stroke-width="1.2" fill="none"/>
+  <circle cx="95.5" cy="82" r="1.2" fill="rgba(180,90,50,0.25)"/>
+  <circle cx="100.5" cy="82" r="1.2" fill="rgba(180,90,50,0.25)"/>
+
+  <!-- Lips -->
+  <path d="M90 88 Q94 86 98 87 Q102 86 106 88" stroke="#C86850" stroke-width="1" fill="none"/>
+  <path d="M90 88 Q94 91 98 92 Q102 91 106 88" fill="#D4785A" stroke="#C86850" stroke-width="0.5"/>
+  <path d="M90 88 Q98 87 106 88" fill="#E8987A" opacity="0.6"/>
+  <!-- Lip highlight -->
+  <path d="M94 89 Q98 88 102 89" stroke="rgba(255,200,170,0.5)" stroke-width="0.8" fill="none"/>
+
+  <!-- Bindi -->
+  <circle cx="98" cy="61" r="2.5" fill="#C8673A"/>
+  <circle cx="98" cy="61" r="1.2" fill="#FF8855"/>
+
+  <!-- ── HAIR ── -->
+  <!-- Main hair shape -->
+  <path d="M76 60 Q78 38 98 34 Q118 38 120 60 Q118 50 98 48 Q78 50 76 60 Z" fill="url(#hair1)"/>
+  <!-- Hair flow right side -->
+  <path d="M118 60 Q124 55 122 48 Q120 40 114 36 Q108 32 98 34 Q88 32 80 38 Q74 44 76 60" fill="url(#hair1)"/>
+  <!-- Hair bun / side parting -->
+  <path d="M76 60 Q72 80 78 108" stroke="#1E1008" stroke-width="10" stroke-linecap="round"/>
+  <path d="M76 60 Q74 82 80 110" stroke="#3A2010" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <!-- Hair highlight -->
+  <path d="M85 36 Q98 33 108 38" stroke="rgba(80,40,20,0.4)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Small bun at back -->
+  <circle cx="75" cy="65" r="10" fill="#1E1008"/>
+  <circle cx="75" cy="65" r="6" fill="#2C1A10"/>
+
+  <!-- Earring Lady 1 -->
+  <circle cx="76" cy="76" r="4" fill="#E8B84B" stroke="#C89B2A" stroke-width="0.8"/>
+  <path d="M76 80 L74 90 L78 90 Z" fill="#E8B84B"/>
+  <circle cx="76" cy="91" r="3" fill="#C8673A"/>
+
+
+  <!-- ════════════════════════════
+       LADY 2 — RIGHT (Teal Saree)
+  ════════════════════════════ -->
 
   <!-- Legs -->
-  <path d="M252 210 Q248 248 246 268" stroke="#3B1F0E" stroke-width="9" stroke-linecap="round"/>
-  <path d="M272 210 Q276 248 278 268" stroke="#3B1F0E" stroke-width="9" stroke-linecap="round"/>
+  <path d="M308 268 Q304 308 302 348" stroke="#1E7A6C" stroke-width="12" stroke-linecap="round" filter="url(#soft-shadow)"/>
+  <path d="M336 268 Q340 308 342 348" stroke="#124E44" stroke-width="12" stroke-linecap="round"/>
   <!-- Feet -->
-  <ellipse cx="244" cy="270" rx="10" ry="5" fill="#2C1A10"/>
-  <ellipse cx="280" cy="270" rx="10" ry="5" fill="#2C1A10"/>
-  <!-- Sandal strap -->
-  <path d="M238 268 L250 268" stroke="#E8B84B" stroke-width="2"/>
-  <path d="M274 268 L286 268" stroke="#E8B84B" stroke-width="2"/>
+  <ellipse cx="300" cy="350" rx="14" ry="6" fill="#2C1A10"/>
+  <ellipse cx="344" cy="350" rx="14" ry="6" fill="#2C1A10"/>
+  <!-- Sandal straps -->
+  <path d="M292 348 Q300 344 308 348" stroke="#E8B84B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M336 348 Q344 344 352 348" stroke="#E8B84B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M294 353 Q300 350 306 353" stroke="#E8B84B" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <path d="M338 353 Q344 350 350 353" stroke="#E8B84B" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 
-  <!-- ═══════════════════════════
-       D-CUT BAG — Lady 2 holds
+  <!-- Saree body -->
+  <path d="M286 112 Q322 104 358 112 L364 270 L280 270 Z" fill="url(#saree2)" filter="url(#drop-shadow)"/>
+  <!-- Saree shadow overlay right side -->
+  <path d="M358 112 Q345 112 338 140 L346 270 L364 270 L358 112 Z" fill="rgba(0,0,0,0.14)"/>
+  <!-- Saree drape / pallu -->
+  <path d="M358 118 Q368 158 372 220 Q374 248 370 268" stroke="#1E7A6C" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.7" filter="url(#soft-shadow)"/>
+  <path d="M358 118 Q370 160 374 222 Q376 250 372 270" stroke="rgba(255,255,255,0.25)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Saree border (golden) -->
+  <path d="M280 268 L364 268" stroke="#E8B84B" stroke-width="3" opacity="0.7"/>
+  <path d="M280 262 L364 262" stroke="#E8B84B" stroke-width="1" opacity="0.4"/>
+  <!-- Blouse neckline -->
+  <path d="M308 113 Q322 120 336 113" stroke="#124E44" stroke-width="2" fill="none" opacity="0.8"/>
+  <!-- Saree fold details -->
+  <path d="M314 115 Q312 180 314 268" stroke="rgba(255,255,255,0.10)" stroke-width="1.5" fill="none"/>
+  <path d="M330 115 Q332 180 330 268" stroke="rgba(0,0,0,0.08)" stroke-width="1.5" fill="none"/>
+
+  <!-- Left arm (extended toward bags) -->
+  <path d="M288 128 Q266 134 252 142" stroke="url(#skin-arm-R)" stroke-width="14" stroke-linecap="round"/>
+  <path d="M288 128 Q266 136 252 144" stroke="rgba(0,0,0,0.08)" stroke-width="14" stroke-linecap="round"/>
+  <!-- Right arm natural -->
+  <path d="M356 128 Q368 162 370 200" stroke="url(#skin-arm-R)" stroke-width="13" stroke-linecap="round"/>
+
+  <!-- Neck -->
+  <path d="M312 98 Q322 95 332 98 L334 114 Q322 118 310 114 Z" fill="url(#skin-R)"/>
+
+  <!-- ── FACE ── -->
+  <ellipse cx="322" cy="76" rx="22" ry="25" fill="url(#skin-R)" filter="url(#soft-shadow)"/>
+  <!-- Cheek shading -->
+  <ellipse cx="310" cy="82" rx="7" ry="5" fill="rgba(210,110,70,0.18)"/>
+  <ellipse cx="334" cy="82" rx="7" ry="5" fill="rgba(210,110,70,0.18)"/>
+  <!-- Chin -->
+  <path d="M312 96 Q322 102 332 96" stroke="rgba(170,90,40,0.2)" stroke-width="1.5" fill="none"/>
+
+  <!-- Eyebrows -->
+  <path d="M309 66 Q313 63 317 65" stroke="#2C1A10" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <path d="M327 65 Q331 63 335 66" stroke="#2C1A10" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+
+  <!-- Eyes -->
+  <ellipse cx="313" cy="72" rx="5" ry="3.5" fill="white"/>
+  <ellipse cx="313" cy="72" rx="3" ry="3" fill="#3A1E0C"/>
+  <ellipse cx="313" cy="72" rx="1.5" ry="1.5" fill="#0A0604"/>
+  <circle cx="314.5" cy="71" r="1" fill="white"/>
+  <path d="M308 70 Q313 67 318 70" stroke="#2C1A10" stroke-width="1.2" fill="none"/>
+  <path d="M308 74 Q313 77 318 74" stroke="rgba(170,90,50,0.4)" stroke-width="0.8" fill="none"/>
+
+  <ellipse cx="331" cy="72" rx="5" ry="3.5" fill="white"/>
+  <ellipse cx="331" cy="72" rx="3" ry="3" fill="#3A1E0C"/>
+  <ellipse cx="331" cy="72" rx="1.5" ry="1.5" fill="#0A0604"/>
+  <circle cx="332.5" cy="71" r="1" fill="white"/>
+  <path d="M326 70 Q331 67 336 70" stroke="#2C1A10" stroke-width="1.2" fill="none"/>
+  <path d="M326 74 Q331 77 336 74" stroke="rgba(170,90,50,0.4)" stroke-width="0.8" fill="none"/>
+
+  <!-- Nose -->
+  <path d="M321 74 Q319 79 320 82 Q322 84 324 82 Q325 79 323 74" stroke="rgba(170,90,40,0.4)" stroke-width="1.2" fill="none"/>
+  <circle cx="319.5" cy="82" r="1.2" fill="rgba(170,80,40,0.25)"/>
+  <circle cx="324.5" cy="82" r="1.2" fill="rgba(170,80,40,0.25)"/>
+
+  <!-- Lips -->
+  <path d="M314 88 Q318 86 322 87 Q326 86 330 88" stroke="#C06040" stroke-width="1" fill="none"/>
+  <path d="M314 88 Q318 91 322 92 Q326 91 330 88" fill="#D4785A" stroke="#C06040" stroke-width="0.5"/>
+  <path d="M314 88 Q322 87 330 88" fill="#E8987A" opacity="0.6"/>
+  <path d="M318 89 Q322 88 326 89" stroke="rgba(255,200,170,0.5)" stroke-width="0.8" fill="none"/>
+
+  <!-- Bindi Lady 2 -->
+  <circle cx="322" cy="61" r="2.5" fill="#E8B84B"/>
+  <circle cx="322" cy="61" r="1.2" fill="#FFD070"/>
+
+  <!-- ── HAIR ── -->
+  <path d="M300 60 Q302 38 322 34 Q342 38 344 60 Q342 50 322 48 Q302 50 300 60 Z" fill="url(#hair2)"/>
+  <path d="M344 60 Q350 55 346 46 Q342 38 334 36 Q324 32 322 34" fill="url(#hair2)"/>
+  <!-- Long braid -->
+  <path d="M344 62 Q348 82 342 115" stroke="#150C04" stroke-width="10" stroke-linecap="round"/>
+  <path d="M344 62 Q350 84 344 117" stroke="#2A1808" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <!-- Braid weave pattern -->
+  <path d="M340 80 Q348 85 340 95 Q348 100 340 110" stroke="rgba(80,40,10,0.4)" stroke-width="2" fill="none"/>
+  <!-- Hair highlight -->
+  <path d="M312 36 Q322 33 332 38" stroke="rgba(60,30,10,0.4)" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Earring Lady 2 -->
+  <circle cx="344" cy="76" r="4" fill="#E8B84B" stroke="#C89B2A" stroke-width="0.8"/>
+  <path d="M344 80 L342 90 L346 90 Z" fill="#E8B84B"/>
+  <circle cx="344" cy="91" r="3" fill="#1E7A6C"/>
+
+  <!-- Hands -->
+  <circle cx="168" cy="143" r="9" fill="url(#skin-L)" filter="url(#soft-shadow)"/>
+  <!-- Fingers Lady 1 -->
+  <path d="M164 139 Q162 133 163 130" stroke="#EDB97A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M168 138 Q167 131 168 128" stroke="#EDB97A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M172 139 Q173 132 172 129" stroke="#EDB97A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M175 142 Q178 136 176 133" stroke="#EDB97A" stroke-width="4" stroke-linecap="round"/>
+
+  <circle cx="252" cy="143" r="9" fill="url(#skin-R)" filter="url(#soft-shadow)"/>
+  <!-- Fingers Lady 2 -->
+  <path d="M248 139 Q246 133 247 130" stroke="#E0A868" stroke-width="5" stroke-linecap="round"/>
+  <path d="M252 138 Q251 131 252 128" stroke="#E0A868" stroke-width="5" stroke-linecap="round"/>
+  <path d="M256 139 Q257 132 256 129" stroke="#E0A868" stroke-width="5" stroke-linecap="round"/>
+  <path d="M245 142 Q242 136 244 133" stroke="#E0A868" stroke-width="4" stroke-linecap="round"/>
+
+
+  <!-- ════════════════════════════
+       BAG 1 — W-CUT (Saffron) held by Lady 1
+       Positioned: x=172 to 218, y=120 to 250
   ════════════════════════════ -->
-  <g transform="translate(157, 108)">
-    <!-- Bag body -->
-    <path d="M4 35 L0 88 L42 88 L38 35 Z" fill="url(#bag2)"/>
-    <!-- D-cut hole at top -->
-    <path d="M4 35 Q21 22 38 35 Q30 42 21 43 Q12 42 4 35 Z" fill="#FFF8EC" stroke="#E8B84B" stroke-width="1.5"/>
-    <!-- Fold crease -->
-    <line x1="21" y1="45" x2="21" y2="88" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-    <!-- Brand label -->
-    <rect x="7" y="52" width="28" height="22" rx="3" fill="rgba(255,255,255,0.15)"/>
-    <text x="21" y="66" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle" opacity="0.9">APL</text>
-    <!-- Shine -->
-    <path d="M7 48 Q12 48 12 65" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round"/>
+  <g transform="translate(170, 118)" filter="url(#soft-shadow)">
+    <!-- Bag gusset / side depth illusion -->
+    <path d="M44 18 L50 24 L50 130 L44 124 Z" fill="#7A3A1A"/>
+
+    <!-- Bag main body -->
+    <rect x="0" y="18" width="44" height="112" rx="2" fill="url(#bag1-body)"/>
+    <!-- Fabric texture overlay -->
+    <rect x="0" y="18" width="44" height="112" rx="2" fill="url(#fabric)" opacity="0.8"/>
+    <!-- Bag left fold shadow -->
+    <rect x="0" y="18" width="8" height="112" rx="2" fill="rgba(0,0,0,0.15)"/>
+    <!-- Bag right highlight -->
+    <rect x="36" y="18" width="8" height="112" rx="2" fill="rgba(255,255,255,0.08)"/>
+
+    <!-- W-Cut handle area — top hem bar -->
+    <rect x="0" y="14" width="44" height="8" rx="2" fill="url(#bag1-top)"/>
+    <!-- W-Cut notch shape -->
+    <path d="M0 18 L0 0 L11 14 L22 2 L33 14 L44 0 L44 18 Z" fill="#FFF5EE" stroke="rgba(200,103,58,0.3)" stroke-width="0.8"/>
+    <!-- W inside the cutout -->
+    <path d="M6 8 L11 14 L16 8 L22 12 L28 8 L33 14 L38 8" stroke="rgba(200,103,58,0.25)" stroke-width="1" fill="none"/>
+
+    <!-- Bottom gusset fold line -->
+    <line x1="0" y1="122" x2="44" y2="122" stroke="rgba(0,0,0,0.2)" stroke-width="1.5"/>
+    <!-- Bottom shadow -->
+    <rect x="0" y="122" width="44" height="8" rx="2" fill="rgba(0,0,0,0.18)"/>
+
+    <!-- Brand print area on bag -->
+    <rect x="6" y="40" width="32" height="52" rx="4" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+    <!-- APL logo text -->
+    <text x="22" y="58" font-family="Georgia, serif" font-size="9" font-weight="bold" fill="rgba(255,255,255,0.95)" text-anchor="middle" letter-spacing="2">APL</text>
+    <line x1="8" y1="62" x2="36" y2="62" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+    <text x="22" y="73" font-family="Arial, sans-serif" font-size="5" fill="rgba(255,255,255,0.75)" text-anchor="middle" letter-spacing="1">ALOREX</text>
+    <text x="22" y="81" font-family="Arial, sans-serif" font-size="4" fill="rgba(255,255,255,0.6)" text-anchor="middle" letter-spacing="0.5">PACKAGING LLP</text>
+    <!-- Non-woven bag indicator lines -->
+    <line x1="8" y1="86" x2="36" y2="86" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <line x1="8" y1="90" x2="36" y2="90" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+
+    <!-- Bag highlight (light reflection) -->
+    <path d="M4 22 Q6 22 6 80" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
   </g>
 
-  <!-- ═══════════════════════════
-       CONVERSATION BUBBLES
-  ════════════════════════════ -->
-  <circle cx="155" cy="88" r="5" fill="#C8673A" opacity="0.35"/>
-  <circle cx="172" cy="80" r="7" fill="#C8673A" opacity="0.25"/>
-  <circle cx="190" cy="75" r="5" fill="#E8B84B" opacity="0.35"/>
 
-  <!-- Ground shadow -->
-  <ellipse cx="100" cy="276" rx="42" ry="6" fill="#C8673A" opacity="0.08"/>
-  <ellipse cx="260" cy="276" rx="42" ry="6" fill="#E8B84B" opacity="0.08"/>
+  <!-- ════════════════════════════
+       BAG 2 — D-CUT (Gold) held by Lady 2
+       Positioned: x=206 to 252, y=120 to 250
+  ════════════════════════════ -->
+  <g transform="translate(206, 118)" filter="url(#soft-shadow)">
+    <!-- Bag gusset left -->
+    <path d="M0 24 L-6 18 L-6 124 L0 130 Z" fill="#885A10"/>
+
+    <!-- Bag main body -->
+    <rect x="0" y="20" width="44" height="112" rx="2" fill="url(#bag2-body)"/>
+    <!-- Fabric texture -->
+    <rect x="0" y="20" width="44" height="112" rx="2" fill="url(#fabric2)" opacity="0.6"/>
+    <!-- Right fold shadow -->
+    <rect x="36" y="20" width="8" height="112" rx="2" fill="rgba(0,0,0,0.12)"/>
+    <!-- Left highlight -->
+    <rect x="0" y="20" width="8" height="112" rx="2" fill="rgba(255,255,255,0.10)"/>
+
+    <!-- D-Cut handle area — top hem -->
+    <rect x="0" y="16" width="44" height="8" rx="2" fill="url(#bag2-top)"/>
+    <!-- D-Cut oval handle hole -->
+    <path d="M0 20 L0 0 L44 0 L44 20 Q33 12 22 10 Q11 12 0 20 Z" fill="#FFF8EC"/>
+    <!-- D-Cut oval cutout -->
+    <ellipse cx="22" cy="16" rx="16" ry="10" fill="#FFF8EC" stroke="rgba(200,150,40,0.3)" stroke-width="0.8"/>
+    <!-- Hem stitching around D-cut -->
+    <ellipse cx="22" cy="16" rx="13" ry="7" fill="none" stroke="rgba(180,120,20,0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+
+    <!-- Bottom fold -->
+    <line x1="0" y1="124" x2="44" y2="124" stroke="rgba(0,0,0,0.18)" stroke-width="1.5"/>
+    <rect x="0" y="124" width="44" height="8" fill="rgba(0,0,0,0.15)" rx="2"/>
+
+    <!-- Brand print -->
+    <rect x="6" y="42" width="32" height="52" rx="4" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="0.8"/>
+    <text x="22" y="60" font-family="Georgia, serif" font-size="9" font-weight="bold" fill="rgba(255,255,255,0.92)" text-anchor="middle" letter-spacing="2">APL</text>
+    <line x1="8" y1="64" x2="36" y2="64" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+    <text x="22" y="75" font-family="Arial, sans-serif" font-size="5" fill="rgba(255,255,255,0.72)" text-anchor="middle" letter-spacing="1">ALOREX</text>
+    <text x="22" y="83" font-family="Arial, sans-serif" font-size="4" fill="rgba(255,255,255,0.58)" text-anchor="middle" letter-spacing="0.5">PACKAGING LLP</text>
+    <line x1="8" y1="88" x2="36" y2="88" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <line x1="8" y1="92" x2="36" y2="92" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+    <!-- Highlight -->
+    <path d="M40 24 Q38 24 38 82" stroke="rgba(255,255,255,0.16)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+
+  <!-- ════════════════════════════
+       CONVERSATION ELEMENTS
+  ════════════════════════════ -->
+  <!-- Speech bubbles / talking dots -->
+  <circle cx="158" cy="78" r="5" fill="#C8673A" opacity="0.3"/>
+  <circle cx="174" cy="68" r="7" fill="#C8673A" opacity="0.22"/>
+  <circle cx="194" cy="62" r="5.5" fill="#C8673A" opacity="0.18"/>
+  <circle cx="246" cy="78" r="5" fill="#1E7A6C" opacity="0.3"/>
+  <circle cx="262" cy="68" r="7" fill="#1E7A6C" opacity="0.22"/>
+  <circle cx="242" cy="65" r="4" fill="#C8673A" opacity="0.15"/>
+
 </svg>
